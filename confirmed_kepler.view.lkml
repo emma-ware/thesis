@@ -3,169 +3,196 @@
 view: confirmed_kepler {
   sql_table_name: exoplanet_thesis.confirmed_kepler ;;
 
-  dimension: dec {
+  dimension: declination {
+    description: "Declination of the planetary system in decimal degrees. "
     type: number
     sql: ${TABLE}.dec ;;
   }
 
   dimension: dec_str {
+    description: "Declination of the planetary system in sexagesimal notation."
+    hidden: yes
     type: string
     sql: ${TABLE}.dec_str ;;
   }
 
-  dimension: gaia_dist {
+  dimension: gaia_distance {
+    description: "Distance computed from Gaia parallax. "
     type: number
     sql: ${TABLE}.gaia_dist ;;
   }
 
-  dimension: gaia_disterr1 {
+  dimension: gaia_distance_upper_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_disterr1 ;;
   }
 
-  dimension: gaia_disterr2 {
+  dimension: gaia_disterr2_lower_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_disterr2 ;;
   }
 
   dimension: gaia_distlim {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_distlim ;;
   }
 
-  dimension: gaia_gmag {
+  dimension: gaia_host_star_magnitude {
+    description: "Brightness of the host star as measuring using the Gaia band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.gaia_gmag ;;
   }
 
-  dimension: gaia_gmagerr {
+  dimension: gaia_host_star_magnitude_error {
+    hidden: yes
     type: string
     sql: ${TABLE}.gaia_gmagerr ;;
   }
 
   dimension: gaia_gmaglim {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_gmaglim ;;
   }
 
-  dimension: gaia_plx {
+  dimension: gaia_parallax {
+    description: "Gaia DR1 Difference in the angular position of a star as measured at two opposite positions within the Earth's orbit. "
     type: number
     sql: ${TABLE}.gaia_plx ;;
   }
 
-  dimension: gaia_plxerr1 {
+  dimension: gaia_parallax_upper_error{
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_plxerr1 ;;
   }
 
-  dimension: gaia_plxerr2 {
+  dimension: gaia_parallax_lower_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_plxerr2 ;;
   }
 
   dimension: gaia_plxlim {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_plxlim ;;
   }
 
-  dimension: gaia_pm {
+  dimension: gaia_proper_motion{
+    description: "Gaia DR1 Total proper motion computed from the RA and Dec.  "
     type: number
     sql: ${TABLE}.gaia_pm ;;
   }
 
-  dimension: gaia_pmdec {
+  dimension: gaia_proper_motion_declination {
+    description: "Gaia DR1 Angular change in declination over time as seen from the center of mass of the Solar System. "
     type: number
     sql: ${TABLE}.gaia_pmdec ;;
   }
 
-  dimension: gaia_pmdecerr {
+  dimension: gaia_proper_motion_dec_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_pmdecerr ;;
   }
-
   dimension: gaia_pmdeclim {
+    hidden: yes
     type: string
     sql: ${TABLE}.gaia_pmdeclim ;;
   }
-
-  dimension: gaia_pmerr {
+  dimension: gaia_proper_motion_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_pmerr ;;
   }
-
   dimension: gaia_pmlim {
+    hidden: yes
     type: string
     sql: ${TABLE}.gaia_pmlim ;;
   }
 
-  dimension: gaia_pmra {
+  dimension: gaia_proper_motion_right_ascention {
+    description: "Gaia DR1 Angular change in right ascension over time as seen from the center of mass of the Solar System. "
     type: number
     sql: ${TABLE}.gaia_pmra ;;
   }
 
-  dimension: gaia_pmraerr {
+  dimension: gaia_proper_motion_right_ascention_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.gaia_pmraerr ;;
   }
-
   dimension: gaia_pmralim {
+    hidden: yes
     type: string
     sql: ${TABLE}.gaia_pmralim ;;
   }
 
-  dimension: hd_name {
+  dimension: HD_name {
+    description: "Name of the star as given by the Henry Draper Catalog.  "
     type: string
     sql: ${TABLE}.hd_name ;;
   }
 
   dimension: hip_name {
+    description: "Name of the star as given by the Hipparcos Catalog. "
     type: string
     sql: ${TABLE}.hip_name ;;
   }
 
-  dimension: pl_angsep {
+  dimension: planet_angular_separation {
     view_label: "Confirmed Kepler Planets"
+    description: "The calculated angular separation (semi-major axis/distance) between the star and the planet. This value is only calculated for systems with both a semi-major axis and a distance value. "
     type: number
     sql: ${TABLE}.pl_angsep ;;
   }
 
-  dimension: pl_angseperr1 {
+  dimension: planet_angular_separation_upper_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_angseperr1 ;;
   }
 
-  dimension: pl_angseperr2 {
+  dimension: planet_angular_separation_lower_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_angseperr2 ;;
   }
 
-  dimension: pl_astflag {
+  dimension: planet_astrometery_flag {
+    description: "Flag indicating if the planet host star exhibits astrometrical variations due to the planet (1=yes, 0=no) "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_astflag ;;
   }
 
-  dimension: pl_bmasse {
+  dimension: planet_mass_earth_mass{
+    description: "Best planet mass measurement in units of masses of Earth. Either Mass, M*sin(i)/sin(i), or M*sin(i)."
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasse ;;
   }
 
-  dimension: pl_bmasseerr1 {
+  dimension: planet_mass_earth_mass_upper_error {
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr1 ;;
   }
 
-  dimension: pl_bmasseerr2 {
+  dimension: planet_mass_earth_mass_lower_error {
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr2 ;;
   }
 
   dimension: pl_bmasselim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasselim ;;
@@ -203,7 +230,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_bmassprov ;;
   }
 
-  dimension: pl_cbflag {
+  dimension: circumbinary_flag {
+    description: "Flag indicating whether the planet orbits a binary system (1=yes, 0=no) "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_cbflag ;;
