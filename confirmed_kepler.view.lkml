@@ -124,142 +124,176 @@ view: confirmed_kepler {
   }
 
   dimension: pl_angsep {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_angsep ;;
   }
 
   dimension: pl_angseperr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_angseperr1 ;;
   }
 
   dimension: pl_angseperr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_angseperr2 ;;
   }
 
   dimension: pl_astflag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_astflag ;;
   }
 
   dimension: pl_bmasse {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasse ;;
   }
 
   dimension: pl_bmasseerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr1 ;;
   }
 
   dimension: pl_bmasseerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr2 ;;
   }
 
   dimension: pl_bmasselim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasselim ;;
   }
 
-  dimension: pl_bmassj {
+  dimension: planet_jupiter_mass {
+    view_label: "Confirmed Kepler Planets"
+    description: "Planet Mass or M*sin(i)"
     type: number
     sql: ${TABLE}.pl_bmassj ;;
   }
 
-  dimension: pl_bmassjerr1 {
+  dimension: planet_jupiter_mass_upper_error {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmassjerr1 ;;
   }
 
-  dimension: pl_bmassjerr2 {
+  dimension: planet_jupiter_mass_lower_error {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmassjerr2 ;;
   }
 
   dimension: pl_bmassjlim {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_bmassjlim ;;
   }
 
-  dimension: pl_bmassprov {
+  dimension: mass_or_provenance {
+    view_label: "Confirmed Kepler Planets"
+    description: "Is the value a planet Mass or M*sin(i)"
     type: string
     sql: ${TABLE}.pl_bmassprov ;;
   }
 
   dimension: pl_cbflag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_cbflag ;;
   }
 
   dimension: pl_def_reflink {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_def_reflink ;;
   }
 
-  dimension: pl_dens {
+  dimension: planet_density {
+    view_label: "Confirmed Kepler Planets"
+    description: "Density of Planet in g/cm^3"
     type: number
     sql: ${TABLE}.pl_dens ;;
   }
 
-  dimension: pl_denserr1 {
+  dimension: planet_density_upper_error {
+    view_label: "Confirmed Kepler Planets"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_denserr1 ;;
   }
 
-  dimension: pl_denserr2 {
+  dimension: planet_density_lower_error {
+    view_label: "Confirmed Kepler Planets"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_denserr2 ;;
   }
 
   dimension: pl_denslim {
+    view_label: "Confirmed Kepler Planets"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_denslim ;;
   }
 
   dimension: pl_disc {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_disc ;;
   }
 
   dimension: pl_disc_reflink {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_disc_reflink ;;
   }
 
   dimension: method_of_discovery {
+    view_label: "Confirmed Kepler Planets"
     description: "Method the planet was discovered with (Transit, Radial Velocity, etc)"
     type: string
     sql: ${TABLE}.pl_discmethod ;;
   }
 
   dimension: pl_edelink {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_edelink ;;
   }
 
   dimension: pl_eqt {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_eqt ;;
   }
 
   dimension: pl_eqterr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_eqterr1 ;;
   }
 
   dimension: pl_eqterr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_eqterr2 ;;
   }
 
   dimension: pl_eqtlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_eqtlim ;;
   }
 
   dimension: pl_facility {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_facility ;;
   }
@@ -271,220 +305,264 @@ view: confirmed_kepler {
   }
 
   dimension: pl_imgflag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_imgflag ;;
   }
 
   dimension: pl_imppar {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_imppar ;;
   }
 
   dimension: pl_impparerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_impparerr1 ;;
   }
 
   dimension: pl_impparerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_impparerr2 ;;
   }
 
   dimension: pl_impparlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_impparlim ;;
   }
 
   dimension: pl_insol {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insol ;;
   }
 
   dimension: pl_insolerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insolerr1 ;;
   }
 
   dimension: pl_insolerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insolerr2 ;;
   }
 
   dimension: pl_insollim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insollim ;;
   }
 
   dimension: pl_instrument {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_instrument ;;
   }
 
   dimension: pl_k2flag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_k2flag ;;
   }
 
-  dimension: pl_kepflag {
+  dimension: planet_Kepler_flag {
+    view_label: "Confirmed Kepler Planets"
+    description: "Flag indicating if the planetary system signature is present in data taken with the Kepler mission (1=yes, 0=no)."
     type: number
     sql: ${TABLE}.pl_kepflag ;;
   }
 
   dimension: planet_letter {
+    view_label: "Confirmed Kepler Planets"
     description: "Planet Letter (i.e. HD5319 C)"
     type: string
     sql: ${TABLE}.pl_letter ;;
   }
 
   dimension: pl_locale {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_locale ;;
   }
 
   dimension: pl_masse {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masse ;;
   }
 
   dimension: pl_masseerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masseerr1 ;;
   }
 
   dimension: pl_masseerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masseerr2 ;;
   }
 
   dimension: pl_masselim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masselim ;;
   }
 
   dimension: pl_massj {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massj ;;
   }
 
   dimension: pl_massjerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjerr1 ;;
   }
 
   dimension: pl_massjerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjerr2 ;;
   }
 
   dimension: pl_massjlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjlim ;;
   }
 
   dimension: pl_mnum {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_mnum ;;
   }
 
   dimension: pl_msinie {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinie ;;
   }
 
   dimension: pl_msinieerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinieerr1 ;;
   }
 
   dimension: pl_msinieerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinieerr2 ;;
   }
 
   dimension: pl_msinielim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinielim ;;
   }
 
   dimension: pl_msinij {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinij ;;
   }
 
   dimension: pl_msinijerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinijerr1 ;;
   }
 
   dimension: pl_msinijerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinijerr2 ;;
   }
 
   dimension: pl_msinijlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinijlim ;;
   }
 
   dimension: pl_name {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_name ;;
   }
 
   dimension: pl_nnotes {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_nnotes ;;
   }
 
   dimension: pl_occdep {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_occdep ;;
   }
 
   dimension: pl_occdeperr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_occdeperr1 ;;
   }
 
   dimension: pl_occdeperr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_occdeperr2 ;;
   }
 
   dimension: pl_occdeplim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_occdeplim ;;
   }
 
   dimension: pl_omflag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_omflag ;;
   }
 
   dimension: eccentricity {
+    view_label: "Confirmed Kepler Planets"
     description: "Orbital eccentricity"
     type: number
     sql: ${TABLE}.pl_orbeccen ;;
   }
 
   dimension: eccentricity_upper_error {
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr1 ;;
   }
 
   dimension: eccentricity_lower_error {
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr2 ;;
   }
 
   dimension: pl_orbeccenlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_orbeccenlim ;;
   }
 
   dimension: inclination {
+    view_label: "Confirmed Kepler Planets"
     description: "Orbital inclination (DEG)"
     type: number
     sql: ${TABLE}.pl_orbincl ;;
@@ -633,203 +711,246 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_radelim ;;
   }
 
-  dimension: pl_radj {
+  dimension: planet_radius {
+    view_label: "Confirmed Kepler Planets"
+    description: "Radius of planet in Jupiter radii"
     type: number
     sql: ${TABLE}.pl_radj ;;
   }
 
-  dimension: pl_radjerr1 {
+  dimension: planet_radius_upper_error {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radjerr1 ;;
   }
 
-  dimension: pl_radjerr2 {
+  dimension: planet_radius_lower_error {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radjerr2 ;;
   }
 
   dimension: pl_radjlim {
+    view_label: "Confirmed Kepler Planets"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_radjlim ;;
   }
 
   dimension: pl_rads {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rads ;;
   }
 
   dimension: pl_radserr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radserr1 ;;
   }
 
   dimension: pl_radserr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radserr2 ;;
   }
 
   dimension: pl_radslim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radslim ;;
   }
 
   dimension: pl_ratdor {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratdor ;;
   }
 
   dimension: pl_ratdorerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratdorerr1 ;;
   }
 
   dimension: pl_ratdorerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratdorerr2 ;;
   }
 
   dimension: pl_ratdorlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratdorlim ;;
   }
 
   dimension: pl_ratror {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratror ;;
   }
 
   dimension: pl_ratrorerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratrorerr1 ;;
   }
 
   dimension: pl_ratrorerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratrorerr2 ;;
   }
 
   dimension: pl_ratrorlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratrorlim ;;
   }
 
   dimension: pl_rvamp {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvamp ;;
   }
 
   dimension: pl_rvamperr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvamperr1 ;;
   }
 
   dimension: pl_rvamperr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvamperr2 ;;
   }
 
   dimension: pl_rvamplim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvamplim ;;
   }
 
   dimension: pl_rvflag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvflag ;;
   }
 
   dimension: pl_st_npar {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_st_npar ;;
   }
 
   dimension: pl_st_nref {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_st_nref ;;
   }
 
   dimension: pl_status {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_status ;;
   }
 
   dimension: pl_telescope {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_telescope ;;
   }
 
   dimension: pl_trandep {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandep ;;
   }
 
   dimension: pl_trandeperr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandeperr1 ;;
   }
 
   dimension: pl_trandeperr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandeperr2 ;;
   }
 
   dimension: pl_trandeplim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandeplim ;;
   }
 
   dimension: pl_trandur {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandur ;;
   }
 
   dimension: pl_trandurerr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandurerr1 ;;
   }
 
   dimension: pl_trandurerr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandurerr2 ;;
   }
 
   dimension: pl_trandurlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandurlim ;;
   }
 
   dimension: pl_tranflag {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_tranflag ;;
   }
 
   dimension: pl_tranmid {
+    view_label: "Confirmed Kepler Planets"
     type: number
     value_format_name: id
     sql: ${TABLE}.pl_tranmid ;;
   }
 
   dimension: pl_tranmiderr1 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_tranmiderr1 ;;
   }
 
   dimension: pl_tranmiderr2 {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_tranmiderr2 ;;
   }
 
   dimension: pl_tranmidlim {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_tranmidlim ;;
   }
 
   dimension: pl_tsystemref {
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_tsystemref ;;
   }
 
-  dimension: pl_ttvflag {
+  dimension: planet_TTVflag {
+    view_label: "Confirmed Kepler Planets"
+    description: "Flag indicating if the planet orbit exhibits transit timing variations from another planet in the system (1=yes, 0=no)."
     type: number
     sql: ${TABLE}.pl_ttvflag ;;
   }
@@ -887,6 +1008,7 @@ view: confirmed_kepler {
   }
 
   dimension: st_actr {
+    view_label: "Confirmed Kepler Stars"
     type: number
     sql: ${TABLE}.st_actr ;;
   }
