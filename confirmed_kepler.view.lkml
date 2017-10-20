@@ -1,3 +1,5 @@
+# Confirmed Kepler Exoplanet Systems
+
 view: confirmed_kepler {
   sql_table_name: exoplanet_thesis.confirmed_kepler ;;
 
@@ -226,7 +228,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_disc_reflink ;;
   }
 
-  dimension: pl_discmethod {
+  dimension: method_of_discovery {
+    description: "Method the planet was discovered with (Transit, Radial Velocity, etc)"
     type: string
     sql: ${TABLE}.pl_discmethod ;;
   }
@@ -261,7 +264,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_facility ;;
   }
 
-  dimension: pl_hostname {
+  dimension: host_star_name {
+    description: "Name of the Star"
     type: string
     sql: ${TABLE}.pl_hostname ;;
   }
@@ -326,7 +330,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_kepflag ;;
   }
 
-  dimension: pl_letter {
+  dimension: planet_letter {
+    description: "Planet Letter (i.e. HD5319 C)"
     type: string
     sql: ${TABLE}.pl_letter ;;
   }
@@ -456,17 +461,20 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_omflag ;;
   }
 
-  dimension: pl_orbeccen {
+  dimension: eccentricity {
+    description: "Orbital eccentricity"
     type: number
     sql: ${TABLE}.pl_orbeccen ;;
   }
 
-  dimension: pl_orbeccenerr1 {
+  dimension: eccentricity_upper_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr1 ;;
   }
 
-  dimension: pl_orbeccenerr2 {
+  dimension: eccentricity_lower_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr2 ;;
   }
@@ -476,22 +484,26 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_orbeccenlim ;;
   }
 
-  dimension: pl_orbincl {
+  dimension: inclination {
+    description: "Orbital inclination (DEG)"
     type: number
     sql: ${TABLE}.pl_orbincl ;;
   }
 
-  dimension: pl_orbinclerr1 {
+  dimension: inclination_upper_limit {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbinclerr1 ;;
   }
 
-  dimension: pl_orbinclerr2 {
+  dimension: inclination_lower_limit {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbinclerr2 ;;
   }
 
   dimension: pl_orbincllim {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbincllim ;;
   }
@@ -516,42 +528,51 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_orblperlim ;;
   }
 
-  dimension: pl_orbper {
+  dimension: orbital_period {
+    description: "Orbital Period in days"
     type: number
     sql: ${TABLE}.pl_orbper ;;
   }
 
-  dimension: pl_orbpererr1 {
+  dimension: orbital_period_upper_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbpererr1 ;;
   }
 
-  dimension: pl_orbpererr2 {
+  dimension: orbital_period_lower_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbpererr2 ;;
   }
 
   dimension: pl_orbperlim {
+    description: "Limit of orbital period - not sure if needed"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbperlim ;;
   }
 
-  dimension: pl_orbsmax {
+  dimension: orbit_semi_major_axis {
+    description: "Semi major axis of planet orbit in AU"
     type: number
     sql: ${TABLE}.pl_orbsmax ;;
   }
 
-  dimension: pl_orbsmaxerr1 {
+  dimension: SMA_upper_error {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxerr1 ;;
   }
 
-  dimension: pl_orbsmaxerr2 {
+  dimension: SMA_lower_error{
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxerr2 ;;
   }
 
   dimension: pl_orbsmaxlim {
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxlim ;;
   }
@@ -581,7 +602,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_pelink ;;
   }
 
-  dimension: pl_pnum {
+  dimension: number_of_planets{
+    description: "Confirmed Planets in the system"
     type: number
     sql: ${TABLE}.pl_pnum ;;
   }
@@ -823,6 +845,7 @@ view: confirmed_kepler {
   }
 
   dimension: rowid {
+    description: "Row ID in Kepler Table"
     type: number
     value_format_name: id
     sql: ${TABLE}.rowid ;;
@@ -2030,6 +2053,6 @@ view: confirmed_kepler {
 
   measure: count {
     type: count
-    drill_fields: [pl_name, pl_hostname, hd_name, hip_name]
+    drill_fields: []
   }
 }
