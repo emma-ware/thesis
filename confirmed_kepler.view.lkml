@@ -1,4 +1,5 @@
-# Confirmed Kepler Exoplanet Systems
+# Confirmed Kepler Exoplanet
+# https://exoplanetarchive.ipac.caltech.edu/docs/API_exoplanet_columns.html
 
 view: confirmed_kepler {
   sql_table_name: exoplanet_thesis.confirmed_kepler ;;
@@ -238,6 +239,8 @@ view: confirmed_kepler {
   }
 
   dimension: pl_def_reflink {
+    hidden: yes
+    description: "???"
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_def_reflink ;;
@@ -271,13 +274,15 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_denslim ;;
   }
 
-  dimension: pl_disc {
+  dimension: year_of_discovery {
+    description: "Year the planet was discovered  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_disc ;;
   }
 
   dimension: pl_disc_reflink {
+    description: "reference link??"
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_disc_reflink ;;
@@ -291,36 +296,41 @@ view: confirmed_kepler {
   }
 
   dimension: pl_edelink {
+    description: "Link to Exoplanet Data Explorer "
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_edelink ;;
   }
 
-  dimension: pl_eqt {
+  dimension: planet_equilibrium_temperature_K {
+    description: "The equilibrium temperature of the planet as modeled by a black body heated only by its host star, or for directly imaged planets, the effective temperature of the planet required to match the measured luminosity if the planet were a black body. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_eqt ;;
   }
 
-  dimension: pl_eqterr1 {
+  dimension: planet_equilibrium_temperature_upper_error {
     view_label: "Confirmed Kepler Planets"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_eqterr1 ;;
   }
-
-  dimension: pl_eqterr2 {
+  dimension: planet_equilibrium_temperature_lower_error {
     view_label: "Confirmed Kepler Planets"
+    hidden: yes
     type: number
     sql: ${TABLE}.pl_eqterr2 ;;
   }
-
   dimension: pl_eqtlim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_eqtlim ;;
   }
 
-  dimension: pl_facility {
+  dimension: discovery_facility {
+    description: "Name of facility of planet discovery observations "
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_facility ;;
@@ -332,67 +342,73 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_hostname ;;
   }
 
-  dimension: pl_imgflag {
+  dimension: planet_imaging_flag {
+    description: "Flag indicating if the planet has been observed via imaging techniques (1=yes, 0=no)  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_imgflag ;;
   }
 
-  dimension: pl_imppar {
+  dimension: impact_parameter {
+    description: "The sky-projected distance between the center of the stellar disc and the center of the planet disc at conjunction, normalized by the stellar radius. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_imppar ;;
   }
 
-  dimension: pl_impparerr1 {
+  dimension: impact_parameter_upper_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_impparerr1 ;;
   }
-
-  dimension: pl_impparerr2 {
+  dimension: impact_parameter_lower_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_impparerr2 ;;
   }
-
   dimension: pl_impparlim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_impparlim ;;
   }
 
-  dimension: pl_insol {
+  dimension: insolation_flux {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insol ;;
   }
-
-  dimension: pl_insolerr1 {
+  dimension: insolation_flux_upper_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insolerr1 ;;
   }
-
-  dimension: pl_insolerr2 {
+  dimension: insolation_flux_lower_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insolerr2 ;;
   }
-
   dimension: pl_insollim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insollim ;;
   }
 
-  dimension: pl_instrument {
+  dimension: discovery_instrument {
+    description: "Name of instrument of planet discovery observations"
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_instrument ;;
   }
 
-  dimension: pl_k2flag {
+  dimension: K2_mission_flag {
+    description: "Flag indicating if the planetary system signature is present in data taken with the K2 Mission (1=yes, 0=no)."
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_k2flag ;;
