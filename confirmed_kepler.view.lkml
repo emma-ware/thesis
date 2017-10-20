@@ -428,6 +428,15 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_letter ;;
   }
 
+#
+#
+#
+# You ended here
+#
+#
+#
+#
+
   dimension: pl_locale {
     view_label: "Confirmed Kepler Planets"
     type: string
