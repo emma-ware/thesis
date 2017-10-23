@@ -828,132 +828,137 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_irac2 ;;
   }
 
-  dimension: st_irac3 {
+  dimension: stellar_brightness_IRAC_58_band {
+    description: "Brightness of the host star as measured using the 5.8um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac3 ;;
   }
 
-  dimension: st_irac4 {
+  dimension: stellar_brightness_IRAC_80_band {
+    description: "Brightness of the host star as measured using the 8.0um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac4 ;;
   }
 
-  dimension: st_iras1 {
-    type: number
-    sql: ${TABLE}.st_iras1 ;;
-  }
-
-  dimension: st_iras2 {
-    type: number
-    sql: ${TABLE}.st_iras2 ;;
-  }
-
-  dimension: st_iras3 {
-    type: number
-    sql: ${TABLE}.st_iras3 ;;
-  }
-
-  dimension: st_iras4 {
-    type: number
-    sql: ${TABLE}.st_iras4 ;;
-  }
-
-  dimension: st_j {
+  dimension: stellar_brightness_j_band {
+    description: "Brightness of the host star as measured using the J (2MASS) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_j ;;
   }
 
-  dimension: st_jmh2 {
+  dimension: stellar_color_jh_band {
+    description: "Color of the star as measured by the difference between J and H (2MASS) bands.  "
     type: number
     sql: ${TABLE}.st_jmh2 ;;
   }
 
-  dimension: st_jmk2 {
+  dimension: stellar_color_kk_band {
+    description: "Color of the star as measured by the difference between K and K (2MASS) bands.  "
     type: number
     sql: ${TABLE}.st_jmk2 ;;
   }
 
-  dimension: st_k {
+  dimension: stellar_brightness_k_band {
+    description: "Brightness of the host star as measured using the K (2MASS) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_k ;;
   }
 
-  dimension: st_logg {
+  dimension: stellar_surface_gravity {
+    description: "Gravitational acceleration experienced at the stellar surface.  "
     type: number
     sql: ${TABLE}.st_logg ;;
   }
 
-  dimension: st_lum {
+  dimension: stellar_luminosity {
+    description: "Amount of energy emitted by a star per unit time, measured in units of solar luminosities.  "
     type: number
     sql: ${TABLE}.st_lum ;;
   }
 
-  dimension: st_m1 {
+  dimension: stellar_color_m1 {
+    description: "Color of the star as measured by the m1 (Stromgren) system. "
     type: number
     sql: ${TABLE}.st_m1 ;;
   }
 
-  dimension: st_mass {
+  dimension: stellar_mass {
+    description: "Amount of matter contained in the star, measured in units of masses of the Sun. "
     type: number
     sql: ${TABLE}.st_mass ;;
   }
 
-  dimension: st_metfe {
+  dimension: stellar_metallicity {
+    description: "Measurement of the metal content of the photosphere of the star as compared to the hydrogen content.  "
     type: number
     sql: ${TABLE}.st_metfe ;;
   }
 
-  dimension: st_metratio {
+  dimension: metallicity_ratio {
+    description: "Ratio for the Metallicity Value ([Fe/H] denotes iron abundance, [M/H] refers to a general metal content)  "
     type: string
     sql: ${TABLE}.st_metratio ;;
-  }
+   }
+#
+#   dimension: st_mips1 {
+#     type: number
+#     sql: ${TABLE}.st_mips1 ;;
+#   }
+#
+#   dimension: st_mips2 {
+#     type: number
+#     sql: ${TABLE}.st_mips2 ;;
+#   }
+#
+#   dimension: st_mips3 {
+#     type: number
+#     sql: ${TABLE}.st_mips3 ;;
+#   }
 
-  dimension: st_mips1 {
-    type: number
-    sql: ${TABLE}.st_mips1 ;;
-  }
-
-  dimension: st_mips2 {
-    type: number
-    sql: ${TABLE}.st_mips2 ;;
-  }
-
-  dimension: st_mips3 {
-    type: number
-    sql: ${TABLE}.st_mips3 ;;
-  }
-
-  dimension: st_naxa {
+  dimension: stellar_n_of_amatuer_light_curves {
+    group_label: "Number of..."
+    description: "Number of literature amateur light curves available for this star in the NASA Exoplanet Archive.  "
     type: number
     sql: ${TABLE}.st_naxa ;;
   }
 
-  dimension: st_nglc {
+  dimension: stellar_n_of_general_light_curves {
+    group_label: "Number of..."
+    description: "Number of Hipparcos light curves available for this star in the NASA Exoplanet Archive. "
     type: number
     sql: ${TABLE}.st_nglc ;;
   }
 
-  dimension: st_nimg {
+  dimension: stellar_number_of_images {
+    group_label: "Number of..."
+    description: "Number of literature images available for this star in the NASA Exoplanet Archive.  "
     type: number
     sql: ${TABLE}.st_nimg ;;
   }
 
-  dimension: st_nplc {
+  dimension: stellar_n_of_transit_light_curves {
+    group_label: "Number of..."
+    description: "Number of literature transit light curves available for this star in the NASA Exoplanet Archive.  "
     type: number
     sql: ${TABLE}.st_nplc ;;
   }
 
-  dimension: st_nrvc {
+  dimension: stellar_n_radial_velocity_curves {
+    group_label: "Number of..."
+    description: "Number of literature radial velocity curves available for this star in the NASA Exoplanet Archive.  "
     type: number
     sql: ${TABLE}.st_nrvc ;;
   }
 
-  dimension: st_nspec {
+  dimension: n_of_spectra {
+    group_label: "Number of..."
+    description: "Number of literature of spectra available for this star in the NASA Exoplanet Archive.  "
     type: number
     sql: ${TABLE}.st_nspec ;;
   }
 
-  dimension: st_nts {
+  dimension: n_of_time_series {
+    group_label: "Number of..."
     type: number
     sql: ${TABLE}.st_nts ;;
   }
