@@ -196,6 +196,7 @@ view: confirmed_kepler {
   }
 
   dimension: host_star_name {
+    primary_key: yes
     description: "Name of the Star"
     type: string
     sql: ${TABLE}.pl_hostname ;;

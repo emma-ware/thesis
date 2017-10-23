@@ -13,6 +13,7 @@ view: kepler_koi {
   }
 
   dimension: kepler_name {
+    primary_key: yes
     type: string
     sql: ${TABLE}.kepler_name ;;
   }

@@ -1,7 +1,7 @@
 view: eu_exoplanets {
   sql_table_name: exoplanet_thesis.EU_exoplanets ;;
 
-  dimension: __name {
+  dimension: planet_name {
     type: string
     sql: ${TABLE}.__name ;;
   }
@@ -352,6 +352,7 @@ view: eu_exoplanets {
   }
 
   dimension: star_name {
+    primary_key: yes
     type: string
     sql: ${TABLE}.star_name ;;
   }
@@ -503,6 +504,6 @@ view: eu_exoplanets {
 
   measure: count {
     type: count
-    drill_fields: [star_name, __name]
+    drill_fields: [star_name, planet_name]
   }
 }
