@@ -23,64 +23,16 @@ view: confirmed_kepler {
     sql: ${TABLE}.gaia_dist ;;
   }
 
-  dimension: gaia_distance_upper_error {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_disterr1 ;;
-  }
-
-  dimension: gaia_disterr2_lower_error {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_disterr2 ;;
-  }
-
-  dimension: gaia_distlim {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_distlim ;;
-  }
-
   dimension: gaia_host_star_magnitude {
     description: "Brightness of the host star as measuring using the Gaia band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.gaia_gmag ;;
   }
 
-  dimension: gaia_host_star_magnitude_error {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.gaia_gmagerr ;;
-  }
-
-  dimension: gaia_gmaglim {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_gmaglim ;;
-  }
-
   dimension: gaia_parallax {
     description: "Gaia DR1 Difference in the angular position of a star as measured at two opposite positions within the Earth's orbit. "
     type: number
     sql: ${TABLE}.gaia_plx ;;
-  }
-
-  dimension: gaia_parallax_upper_error{
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_plxerr1 ;;
-  }
-
-  dimension: gaia_parallax_lower_error {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_plxerr2 ;;
-  }
-
-  dimension: gaia_plxlim {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_plxlim ;;
   }
 
   dimension: gaia_proper_motion{
@@ -95,42 +47,10 @@ view: confirmed_kepler {
     sql: ${TABLE}.gaia_pmdec ;;
   }
 
-  dimension: gaia_proper_motion_dec_error {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_pmdecerr ;;
-  }
-  dimension: gaia_pmdeclim {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.gaia_pmdeclim ;;
-  }
-  dimension: gaia_proper_motion_error {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_pmerr ;;
-  }
-  dimension: gaia_pmlim {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.gaia_pmlim ;;
-  }
-
   dimension: gaia_proper_motion_right_ascention {
     description: "Gaia DR1 Angular change in right ascension over time as seen from the center of mass of the Solar System. "
     type: number
     sql: ${TABLE}.gaia_pmra ;;
-  }
-
-  dimension: gaia_proper_motion_right_ascention_error {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.gaia_pmraerr ;;
-  }
-  dimension: gaia_pmralim {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.gaia_pmralim ;;
   }
 
   dimension: HD_name {
@@ -150,20 +70,6 @@ view: confirmed_kepler {
     description: "The calculated angular separation (semi-major axis/distance) between the star and the planet. This value is only calculated for systems with both a semi-major axis and a distance value. "
     type: number
     sql: ${TABLE}.pl_angsep ;;
-  }
-
-  dimension: planet_angular_separation_upper_error {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_angseperr1 ;;
-  }
-
-  dimension: planet_angular_separation_lower_error {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_angseperr2 ;;
   }
 
   dimension: planet_astrometery_flag {
@@ -190,13 +96,6 @@ view: confirmed_kepler {
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr2 ;;
-  }
-
-  dimension: pl_bmasselim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_bmasselim ;;
   }
 
   dimension: planet_jupiter_mass {
@@ -253,27 +152,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_dens ;;
   }
 
-  dimension: planet_density_upper_error {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_denserr1 ;;
-  }
-
-  dimension: planet_density_lower_error {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_denserr2 ;;
-  }
-
-  dimension: pl_denslim {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_denslim ;;
-  }
-
   dimension: year_of_discovery {
     description: "Year the planet was discovered  "
     view_label: "Confirmed Kepler Planets"
@@ -310,25 +188,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_eqt ;;
   }
 
-  dimension: planet_equilibrium_temperature_upper_error {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_eqterr1 ;;
-  }
-  dimension: planet_equilibrium_temperature_lower_error {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_eqterr2 ;;
-  }
-  dimension: pl_eqtlim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_eqtlim ;;
-  }
-
   dimension: discovery_facility {
     description: "Name of facility of planet discovery observations "
     view_label: "Confirmed Kepler Planets"
@@ -356,49 +215,13 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_imppar ;;
   }
 
-  dimension: impact_parameter_upper_error {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_impparerr1 ;;
-  }
-  dimension: impact_parameter_lower_error {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_impparerr2 ;;
-  }
-  dimension: pl_impparlim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_impparlim ;;
-  }
-
   dimension: insolation_flux {
     hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_insol ;;
   }
-  dimension: insolation_flux_upper_error {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_insolerr1 ;;
-  }
-  dimension: insolation_flux_lower_error {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_insolerr2 ;;
-  }
-  dimension: pl_insollim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_insollim ;;
-  }
+
 
   dimension: discovery_instrument {
     description: "Name of instrument of planet discovery observations"
@@ -437,151 +260,107 @@ view: confirmed_kepler {
 #
 #
 
-  dimension: pl_locale {
+  dimension: discovery_locale {
+    description: "Location of observation of planet discovery (Ground or Space) "
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_locale ;;
   }
 
-  dimension: pl_masse {
+  dimension: planet_mass_earth_masses {
+    description: "Amount of matter contained in the planet, measured in units of masses of the Earth. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masse ;;
   }
 
-  dimension: pl_masseerr1 {
+  dimension: planet_mass_earth_masses_upper_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masseerr1 ;;
   }
-
-  dimension: pl_masseerr2 {
+  dimension: planet_mass_earth_masses_lower_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masseerr2 ;;
   }
-
   dimension: pl_masselim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_masselim ;;
   }
 
-  dimension: pl_massj {
+  dimension: planet_mass_jupiter_masses {
+    description: "Amount of matter contained in the planet, measured in units of masses of the Jupiter. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massj ;;
   }
 
-  dimension: pl_massjerr1 {
+  dimension: planet_mass_jupiter_masses_upper_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjerr1 ;;
   }
-
-  dimension: pl_massjerr2 {
+  dimension: planet_mass_jupiter_masses_lower_error {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjerr2 ;;
   }
-
   dimension: pl_massjlim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjlim ;;
   }
 
-  dimension: pl_mnum {
+  dimension: number_of_moons {
+    description: "Number of moons detected in the planetary system. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_mnum ;;
   }
 
-  dimension: pl_msinie {
+  dimension: planet_m_sinI_earth_mass {
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinie ;;
   }
 
-  dimension: pl_msinieerr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_msinieerr1 ;;
-  }
-
-  dimension: pl_msinieerr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_msinieerr2 ;;
-  }
-
-  dimension: pl_msinielim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_msinielim ;;
-  }
-
-  dimension: pl_msinij {
+  dimension: planet_m_sinI_jupiter_mass {
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinij ;;
   }
 
-  dimension: pl_msinijerr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_msinijerr1 ;;
-  }
-
-  dimension: pl_msinijerr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_msinijerr2 ;;
-  }
-
-  dimension: pl_msinijlim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_msinijlim ;;
-  }
-
-  dimension: pl_name {
+  dimension: planet_name {
+    description: "Planet name most commonly used in the literature. "
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_name ;;
   }
 
-  dimension: pl_nnotes {
+  dimension: planets_number_of_notes {
+    description: "Number of Notes associated with the planet. View all notes in the Confirmed Planet Overview page. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_nnotes ;;
   }
 
-  dimension: pl_occdep {
+  dimension: occulation_depth {
+    description: "Depth of occultation of secondary eclipse "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_occdep ;;
   }
 
-  dimension: pl_occdeperr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_occdeperr1 ;;
-  }
-
-  dimension: pl_occdeperr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_occdeperr2 ;;
-  }
-
-  dimension: pl_occdeplim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_occdeplim ;;
-  }
-
-  dimension: pl_omflag {
+  dimension:  Orbital_Modulation_Flag {
+    description: "Flag indicating whether the planet exhibits orbital modulations on the phase curve (1=yes, 0=no)  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_omflag ;;
@@ -600,15 +379,14 @@ view: confirmed_kepler {
     type: number
     sql: ${TABLE}.pl_orbeccenerr1 ;;
   }
-
   dimension: eccentricity_lower_error {
     view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr2 ;;
   }
-
   dimension: pl_orbeccenlim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_orbeccenlim ;;
@@ -626,57 +404,43 @@ view: confirmed_kepler {
     type: number
     sql: ${TABLE}.pl_orbinclerr1 ;;
   }
-
   dimension: inclination_lower_limit {
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbinclerr2 ;;
   }
-
   dimension: pl_orbincllim {
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbincllim ;;
   }
 
-  dimension: pl_orblper {
+  dimension: longitude_of_periastron {
+    view_label: "Confirmed Kepler Planets"
+    description: "The angular separation between the ascending node of the orbit and the location in the orbit of periastron. "
     type: number
     sql: ${TABLE}.pl_orblper ;;
   }
 
-  dimension: pl_orblpererr1 {
-    type: number
-    sql: ${TABLE}.pl_orblpererr1 ;;
-  }
-
-  dimension: pl_orblpererr2 {
-    type: number
-    sql: ${TABLE}.pl_orblpererr2 ;;
-  }
-
-  dimension: pl_orblperlim {
-    type: number
-    sql: ${TABLE}.pl_orblperlim ;;
-  }
-
-  dimension: orbital_period {
+  dimension: orbital_period_days {
+    view_label: "Confirmed Kepler Planets"
     description: "Orbital Period in days"
     type: number
     sql: ${TABLE}.pl_orbper ;;
   }
 
   dimension: orbital_period_upper_error {
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbpererr1 ;;
   }
-
   dimension: orbital_period_lower_error {
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbpererr2 ;;
   }
-
   dimension: pl_orbperlim {
     description: "Limit of orbital period - not sure if needed"
     hidden: yes
@@ -685,81 +449,81 @@ view: confirmed_kepler {
   }
 
   dimension: orbit_semi_major_axis {
+    view_label: "Confirmed Kepler Planets"
     description: "Semi major axis of planet orbit in AU"
     type: number
     sql: ${TABLE}.pl_orbsmax ;;
   }
 
   dimension: SMA_upper_error {
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxerr1 ;;
   }
-
   dimension: SMA_lower_error{
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxerr2 ;;
   }
-
   dimension: pl_orbsmaxlim {
+    view_label: "Confirmed Kepler Planets"
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxlim ;;
   }
 
-  dimension: pl_orbtper {
+  dimension: time_of_periastron_JD {
+    description: "The time at which the orbiting body is at its closest approach to the star it orbits (i.e. is at periastron). "
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_orbtper ;;
   }
 
-  dimension: pl_orbtpererr1 {
-    type: number
-    sql: ${TABLE}.pl_orbtpererr1 ;;
-  }
-
-  dimension: pl_orbtpererr2 {
-    type: number
-    sql: ${TABLE}.pl_orbtpererr2 ;;
-  }
-
-  dimension: pl_orbtperlim {
-    type: number
-    sql: ${TABLE}.pl_orbtperlim ;;
-  }
-
-  dimension: pl_pelink {
+  dimension: exoplanet_encyclopedia_link {
+    description: "It links to the planet page in the Exoplanet Encyclopaedia. "
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_pelink ;;
   }
 
   dimension: number_of_planets{
+    view_label: "Confirmed Kepler Planets"
     description: "Confirmed Planets in the system"
     type: number
     sql: ${TABLE}.pl_pnum ;;
   }
 
-  dimension: pl_publ_date {
+  dimension: publication_date {
+    description: "Publication Date of the planet discovery referee publication. "
+    view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_publ_date ;;
   }
 
-  dimension: pl_rade {
+  dimension: planet_radius_earth_radii {
+    description: "Length of a line segment from the center of the planet to its surface, measured in units of radius of the Earth.  "
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rade ;;
   }
 
-  dimension: pl_radeerr1 {
+  dimension: planet_radius_earth_radii_upper_limit {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radeerr1 ;;
   }
 
-  dimension: pl_radeerr2 {
+  dimension: planet_radius_earth_radii_lower_limit {
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radeerr2 ;;
   }
 
   dimension: pl_radelim {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radelim ;;
   }
@@ -790,212 +554,105 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_radjlim ;;
   }
 
-  dimension: pl_rads {
-    view_label: "Confirmed Kepler Planets"
+  dimension: planet_radius_solar {
+    view_label: "Length of a line segment from the center of the planet to its surface, measured in units of radius of the Sun. "
     type: number
     sql: ${TABLE}.pl_rads ;;
   }
 
-  dimension: pl_radserr1 {
+  dimension: planet_radius_solar_upper_limit {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radserr1 ;;
   }
-
-  dimension: pl_radserr2 {
+  dimension: planet_radius_solar_lower_limit {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radserr2 ;;
   }
-
   dimension: pl_radslim {
+    hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radslim ;;
   }
 
-  dimension: pl_ratdor {
+  dimension: planet_star_distance_over_radius {
+    description: "The distance between the planet and the star at mid-transit divided by the stellar radius. For the case of zero orbital eccentricity, the distance at mid-transit is the semi-major axis of the planetary orbit.  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratdor ;;
   }
 
-  dimension: pl_ratdorerr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_ratdorerr1 ;;
-  }
 
-  dimension: pl_ratdorerr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_ratdorerr2 ;;
-  }
-
-  dimension: pl_ratdorlim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_ratdorlim ;;
-  }
-
-  dimension: pl_ratror {
+  dimension: planet_star_radius_ratio {
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_ratror ;;
   }
 
-  dimension: pl_ratrorerr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_ratrorerr1 ;;
-  }
 
-  dimension: pl_ratrorerr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_ratrorerr2 ;;
-  }
 
-  dimension: pl_ratrorlim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_ratrorlim ;;
-  }
-
-  dimension: pl_rvamp {
+  dimension: radial_velocity_amplitude {
+    description: "Half the peak-to-peak amplitude of variability in the stellar radial velocity.  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvamp ;;
   }
 
-  dimension: pl_rvamperr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_rvamperr1 ;;
-  }
-
-  dimension: pl_rvamperr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_rvamperr2 ;;
-  }
-
-  dimension: pl_rvamplim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_rvamplim ;;
-  }
-
-  dimension: pl_rvflag {
+  dimension: planet_rv_flag {
+    description: "Flag indicating if the planet host star exhibits radial velocity variations due to the planet (1=yes, 0=no)"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_rvflag ;;
   }
 
-  dimension: pl_st_npar {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_st_npar ;;
-  }
-
-  dimension: pl_st_nref {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_st_nref ;;
-  }
-
-  dimension: pl_status {
+  dimension: planet_status {
+    description: "Status of the planet (1 = announced, 2 = submitted, 3 = accepted, 0 = retracted). "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_status ;;
   }
 
-  dimension: pl_telescope {
+  dimension: planet_telescope {
+    description: "Name of telescope of planet discovery observations  "
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_telescope ;;
   }
 
-  dimension: pl_trandep {
+  dimension: transit_depth {
+    description: "The size of the relative flux decrement caused by the orbiting body transiting in front of the star.  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandep ;;
   }
 
-  dimension: pl_trandeperr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_trandeperr1 ;;
-  }
-
-  dimension: pl_trandeperr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_trandeperr2 ;;
-  }
-
-  dimension: pl_trandeplim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_trandeplim ;;
-  }
-
-  dimension: pl_trandur {
+  dimension: transit_duration {
+    description: "The length of time from the moment the planet begins to cross the stellar limb to the moment the planet finishes crossing the stellar limb. "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_trandur ;;
   }
 
-  dimension: pl_trandurerr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_trandurerr1 ;;
-  }
-
-  dimension: pl_trandurerr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_trandurerr2 ;;
-  }
-
-  dimension: pl_trandurlim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_trandurlim ;;
-  }
-
-  dimension: pl_tranflag {
+  dimension: transit_flag {
+    description: "Flag indicating if the planet transits its host star (1=yes, 0=no)  "
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_tranflag ;;
   }
 
-  dimension: pl_tranmid {
+  dimension: transit_midpoint_JD {
+    description: "The time given by the average of the time the planet begins to cross the stellar limb and the time the planet finishes crossing the stellar limb. "
     view_label: "Confirmed Kepler Planets"
     type: number
     value_format_name: id
     sql: ${TABLE}.pl_tranmid ;;
   }
 
-  dimension: pl_tranmiderr1 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_tranmiderr1 ;;
-  }
-
-  dimension: pl_tranmiderr2 {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_tranmiderr2 ;;
-  }
-
-  dimension: pl_tranmidlim {
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_tranmidlim ;;
-  }
-
-  dimension: pl_tsystemref {
+  dimension: Time_System_Reference   {
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_tsystemref ;;
@@ -1008,12 +665,14 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_ttvflag ;;
   }
 
-  dimension: ra {
+  dimension: planet_right_ascention {
+    description: "Right Ascension of the planetary system in decimal degrees. "
     type: number
     sql: ${TABLE}.ra ;;
   }
 
   dimension: ra_str {
+    hidden: yes
     type: string
     sql: ${TABLE}.ra_str ;;
   }
@@ -1026,6 +685,7 @@ view: confirmed_kepler {
   }
 
   dimension_group: rowupdate {
+    description: "Date of last update of the planet parameters. "
     type: time
     timeframes: [
       raw,
@@ -1050,16 +710,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_actlxblend ;;
   }
 
-  dimension: st_actlxerr {
-    type: string
-    sql: ${TABLE}.st_actlxerr ;;
-  }
-
-  dimension: st_actlxlim {
-    type: number
-    sql: ${TABLE}.st_actlxlim ;;
-  }
-
   dimension: st_actr {
     view_label: "Confirmed Kepler Stars"
     type: number
@@ -1069,16 +719,6 @@ view: confirmed_kepler {
   dimension: st_actrblend {
     type: number
     sql: ${TABLE}.st_actrblend ;;
-  }
-
-  dimension: st_actrerr {
-    type: string
-    sql: ${TABLE}.st_actrerr ;;
-  }
-
-  dimension: st_actrlim {
-    type: number
-    sql: ${TABLE}.st_actrlim ;;
   }
 
   dimension: st_acts {
@@ -1091,35 +731,12 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_actsblend ;;
   }
 
-  dimension: st_actserr {
-    type: number
-    sql: ${TABLE}.st_actserr ;;
-  }
-
-  dimension: st_actslim {
-    type: number
-    sql: ${TABLE}.st_actslim ;;
-  }
 
   dimension: st_age {
     type: number
     sql: ${TABLE}.st_age ;;
   }
 
-  dimension: st_ageerr1 {
-    type: number
-    sql: ${TABLE}.st_ageerr1 ;;
-  }
-
-  dimension: st_ageerr2 {
-    type: number
-    sql: ${TABLE}.st_ageerr2 ;;
-  }
-
-  dimension: st_agelim {
-    type: number
-    sql: ${TABLE}.st_agelim ;;
-  }
 
   dimension: st_bj {
     type: number
@@ -1129,16 +746,6 @@ view: confirmed_kepler {
   dimension: st_bjblend {
     type: number
     sql: ${TABLE}.st_bjblend ;;
-  }
-
-  dimension: st_bjerr {
-    type: number
-    sql: ${TABLE}.st_bjerr ;;
-  }
-
-  dimension: st_bjlim {
-    type: number
-    sql: ${TABLE}.st_bjlim ;;
   }
 
   dimension: st_bmvj {
@@ -1151,15 +758,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_bmvjblend ;;
   }
 
-  dimension: st_bmvjerr {
-    type: number
-    sql: ${TABLE}.st_bmvjerr ;;
-  }
-
-  dimension: st_bmvjlim {
-    type: number
-    sql: ${TABLE}.st_bmvjlim ;;
-  }
 
   dimension: st_bmy {
     type: number
@@ -1171,15 +769,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_bmyblend ;;
   }
 
-  dimension: st_bmyerr {
-    type: number
-    sql: ${TABLE}.st_bmyerr ;;
-  }
-
-  dimension: st_bmylim {
-    type: number
-    sql: ${TABLE}.st_bmylim ;;
-  }
 
   dimension: st_c1 {
     type: number
@@ -1189,16 +778,6 @@ view: confirmed_kepler {
   dimension: st_c1blend {
     type: number
     sql: ${TABLE}.st_c1blend ;;
-  }
-
-  dimension: st_c1err {
-    type: number
-    sql: ${TABLE}.st_c1err ;;
-  }
-
-  dimension: st_c1lim {
-    type: number
-    sql: ${TABLE}.st_c1lim ;;
   }
 
   dimension: st_colorn {
@@ -1211,39 +790,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_dens ;;
   }
 
-  dimension: st_denserr1 {
-    type: number
-    sql: ${TABLE}.st_denserr1 ;;
-  }
-
-  dimension: st_denserr2 {
-    type: number
-    sql: ${TABLE}.st_denserr2 ;;
-  }
-
-  dimension: st_denslim {
-    type: number
-    sql: ${TABLE}.st_denslim ;;
-  }
-
   dimension: st_dist {
     type: number
     sql: ${TABLE}.st_dist ;;
-  }
-
-  dimension: st_disterr1 {
-    type: number
-    sql: ${TABLE}.st_disterr1 ;;
-  }
-
-  dimension: st_disterr2 {
-    type: number
-    sql: ${TABLE}.st_disterr2 ;;
-  }
-
-  dimension: st_distlim {
-    type: number
-    sql: ${TABLE}.st_distlim ;;
   }
 
   dimension: st_elat {
@@ -1276,16 +825,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_hblend ;;
   }
 
-  dimension: st_herr {
-    type: number
-    sql: ${TABLE}.st_herr ;;
-  }
-
-  dimension: st_hlim {
-    type: number
-    sql: ${TABLE}.st_hlim ;;
-  }
-
   dimension: st_hmk2 {
     type: number
     sql: ${TABLE}.st_hmk2 ;;
@@ -1294,16 +833,6 @@ view: confirmed_kepler {
   dimension: st_hmk2blend {
     type: number
     sql: ${TABLE}.st_hmk2blend ;;
-  }
-
-  dimension: st_hmk2err {
-    type: number
-    sql: ${TABLE}.st_hmk2err ;;
-  }
-
-  dimension: st_hmk2lim {
-    type: number
-    sql: ${TABLE}.st_hmk2lim ;;
   }
 
   dimension: st_ic {
@@ -1316,16 +845,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_icblend ;;
   }
 
-  dimension: st_icerr {
-    type: number
-    sql: ${TABLE}.st_icerr ;;
-  }
-
-  dimension: st_iclim {
-    type: number
-    sql: ${TABLE}.st_iclim ;;
-  }
-
   dimension: st_irac1 {
     type: number
     sql: ${TABLE}.st_irac1 ;;
@@ -1334,16 +853,6 @@ view: confirmed_kepler {
   dimension: st_irac1blend {
     type: number
     sql: ${TABLE}.st_irac1blend ;;
-  }
-
-  dimension: st_irac1err {
-    type: number
-    sql: ${TABLE}.st_irac1err ;;
-  }
-
-  dimension: st_irac1lim {
-    type: number
-    sql: ${TABLE}.st_irac1lim ;;
   }
 
   dimension: st_irac2 {
@@ -1356,16 +865,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_irac2blend ;;
   }
 
-  dimension: st_irac2err {
-    type: number
-    sql: ${TABLE}.st_irac2err ;;
-  }
-
-  dimension: st_irac2lim {
-    type: number
-    sql: ${TABLE}.st_irac2lim ;;
-  }
-
   dimension: st_irac3 {
     type: number
     sql: ${TABLE}.st_irac3 ;;
@@ -1374,16 +873,6 @@ view: confirmed_kepler {
   dimension: st_irac3blend {
     type: number
     sql: ${TABLE}.st_irac3blend ;;
-  }
-
-  dimension: st_irac3err {
-    type: number
-    sql: ${TABLE}.st_irac3err ;;
-  }
-
-  dimension: st_irac3lim {
-    type: number
-    sql: ${TABLE}.st_irac3lim ;;
   }
 
   dimension: st_irac4 {
@@ -1396,16 +885,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_irac4blend ;;
   }
 
-  dimension: st_irac4err {
-    type: number
-    sql: ${TABLE}.st_irac4err ;;
-  }
-
-  dimension: st_irac4lim {
-    type: number
-    sql: ${TABLE}.st_irac4lim ;;
-  }
-
   dimension: st_iras1 {
     type: number
     sql: ${TABLE}.st_iras1 ;;
@@ -1414,16 +893,6 @@ view: confirmed_kepler {
   dimension: st_iras1blend {
     type: number
     sql: ${TABLE}.st_iras1blend ;;
-  }
-
-  dimension: st_iras1err {
-    type: number
-    sql: ${TABLE}.st_iras1err ;;
-  }
-
-  dimension: st_iras1lim {
-    type: number
-    sql: ${TABLE}.st_iras1lim ;;
   }
 
   dimension: st_iras2 {
@@ -1436,16 +905,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_iras2blend ;;
   }
 
-  dimension: st_iras2err {
-    type: number
-    sql: ${TABLE}.st_iras2err ;;
-  }
-
-  dimension: st_iras2lim {
-    type: number
-    sql: ${TABLE}.st_iras2lim ;;
-  }
-
   dimension: st_iras3 {
     type: number
     sql: ${TABLE}.st_iras3 ;;
@@ -1454,16 +913,6 @@ view: confirmed_kepler {
   dimension: st_iras3blend {
     type: number
     sql: ${TABLE}.st_iras3blend ;;
-  }
-
-  dimension: st_iras3err {
-    type: number
-    sql: ${TABLE}.st_iras3err ;;
-  }
-
-  dimension: st_iras3lim {
-    type: number
-    sql: ${TABLE}.st_iras3lim ;;
   }
 
   dimension: st_iras4 {
@@ -1476,16 +925,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_iras4blend ;;
   }
 
-  dimension: st_iras4err {
-    type: number
-    sql: ${TABLE}.st_iras4err ;;
-  }
-
-  dimension: st_iras4lim {
-    type: number
-    sql: ${TABLE}.st_iras4lim ;;
-  }
-
   dimension: st_j {
     type: number
     sql: ${TABLE}.st_j ;;
@@ -1494,16 +933,6 @@ view: confirmed_kepler {
   dimension: st_jblend {
     type: number
     sql: ${TABLE}.st_jblend ;;
-  }
-
-  dimension: st_jerr {
-    type: number
-    sql: ${TABLE}.st_jerr ;;
-  }
-
-  dimension: st_jlim {
-    type: number
-    sql: ${TABLE}.st_jlim ;;
   }
 
   dimension: st_jmh2 {
@@ -1516,16 +945,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_jmh2blend ;;
   }
 
-  dimension: st_jmh2err {
-    type: number
-    sql: ${TABLE}.st_jmh2err ;;
-  }
-
-  dimension: st_jmh2lim {
-    type: number
-    sql: ${TABLE}.st_jmh2lim ;;
-  }
-
   dimension: st_jmk2 {
     type: number
     sql: ${TABLE}.st_jmk2 ;;
@@ -1534,16 +953,6 @@ view: confirmed_kepler {
   dimension: st_jmk2blend {
     type: number
     sql: ${TABLE}.st_jmk2blend ;;
-  }
-
-  dimension: st_jmk2err {
-    type: number
-    sql: ${TABLE}.st_jmk2err ;;
-  }
-
-  dimension: st_jmk2lim {
-    type: number
-    sql: ${TABLE}.st_jmk2lim ;;
   }
 
   dimension: st_k {
@@ -1556,16 +965,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_kblend ;;
   }
 
-  dimension: st_kerr {
-    type: number
-    sql: ${TABLE}.st_kerr ;;
-  }
-
-  dimension: st_klim {
-    type: number
-    sql: ${TABLE}.st_klim ;;
-  }
-
   dimension: st_logg {
     type: number
     sql: ${TABLE}.st_logg ;;
@@ -1574,21 +973,6 @@ view: confirmed_kepler {
   dimension: st_loggblend {
     type: number
     sql: ${TABLE}.st_loggblend ;;
-  }
-
-  dimension: st_loggerr1 {
-    type: number
-    sql: ${TABLE}.st_loggerr1 ;;
-  }
-
-  dimension: st_loggerr2 {
-    type: number
-    sql: ${TABLE}.st_loggerr2 ;;
-  }
-
-  dimension: st_logglim {
-    type: number
-    sql: ${TABLE}.st_logglim ;;
   }
 
   dimension: st_lum {
@@ -1601,21 +985,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_lumblend ;;
   }
 
-  dimension: st_lumerr1 {
-    type: number
-    sql: ${TABLE}.st_lumerr1 ;;
-  }
-
-  dimension: st_lumerr2 {
-    type: number
-    sql: ${TABLE}.st_lumerr2 ;;
-  }
-
-  dimension: st_lumlim {
-    type: number
-    sql: ${TABLE}.st_lumlim ;;
-  }
-
   dimension: st_m1 {
     type: number
     sql: ${TABLE}.st_m1 ;;
@@ -1624,16 +993,6 @@ view: confirmed_kepler {
   dimension: st_m1blend {
     type: number
     sql: ${TABLE}.st_m1blend ;;
-  }
-
-  dimension: st_m1err {
-    type: number
-    sql: ${TABLE}.st_m1err ;;
-  }
-
-  dimension: st_m1lim {
-    type: number
-    sql: ${TABLE}.st_m1lim ;;
   }
 
   dimension: st_mass {
@@ -1646,21 +1005,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_massblend ;;
   }
 
-  dimension: st_masserr1 {
-    type: number
-    sql: ${TABLE}.st_masserr1 ;;
-  }
-
-  dimension: st_masserr2 {
-    type: number
-    sql: ${TABLE}.st_masserr2 ;;
-  }
-
-  dimension: st_masslim {
-    type: number
-    sql: ${TABLE}.st_masslim ;;
-  }
-
   dimension: st_metfe {
     type: number
     sql: ${TABLE}.st_metfe ;;
@@ -1669,21 +1013,6 @@ view: confirmed_kepler {
   dimension: st_metfeblend {
     type: number
     sql: ${TABLE}.st_metfeblend ;;
-  }
-
-  dimension: st_metfeerr1 {
-    type: number
-    sql: ${TABLE}.st_metfeerr1 ;;
-  }
-
-  dimension: st_metfeerr2 {
-    type: number
-    sql: ${TABLE}.st_metfeerr2 ;;
-  }
-
-  dimension: st_metfelim {
-    type: number
-    sql: ${TABLE}.st_metfelim ;;
   }
 
   dimension: st_metratio {
@@ -1701,16 +1030,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_mips1blend ;;
   }
 
-  dimension: st_mips1err {
-    type: number
-    sql: ${TABLE}.st_mips1err ;;
-  }
-
-  dimension: st_mips1lim {
-    type: number
-    sql: ${TABLE}.st_mips1lim ;;
-  }
-
   dimension: st_mips2 {
     type: number
     sql: ${TABLE}.st_mips2 ;;
@@ -1721,16 +1040,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_mips2blend ;;
   }
 
-  dimension: st_mips2err {
-    type: number
-    sql: ${TABLE}.st_mips2err ;;
-  }
-
-  dimension: st_mips2lim {
-    type: number
-    sql: ${TABLE}.st_mips2lim ;;
-  }
-
   dimension: st_mips3 {
     type: number
     sql: ${TABLE}.st_mips3 ;;
@@ -1739,16 +1048,6 @@ view: confirmed_kepler {
   dimension: st_mips3blend {
     type: number
     sql: ${TABLE}.st_mips3blend ;;
-  }
-
-  dimension: st_mips3err {
-    type: number
-    sql: ${TABLE}.st_mips3err ;;
-  }
-
-  dimension: st_mips3lim {
-    type: number
-    sql: ${TABLE}.st_mips3lim ;;
   }
 
   dimension: st_naxa {
@@ -1801,16 +1100,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_optmagblend ;;
   }
 
-  dimension: st_optmagerr {
-    type: number
-    sql: ${TABLE}.st_optmagerr ;;
-  }
-
-  dimension: st_optmaglim {
-    type: number
-    sql: ${TABLE}.st_optmaglim ;;
-  }
-
   dimension: st_photn {
     type: number
     sql: ${TABLE}.st_photn ;;
@@ -1824,16 +1113,6 @@ view: confirmed_kepler {
   dimension: st_plxblend {
     type: number
     sql: ${TABLE}.st_plxblend ;;
-  }
-
-  dimension: st_plxerr1 {
-    type: number
-    sql: ${TABLE}.st_plxerr1 ;;
-  }
-
-  dimension: st_plxerr2 {
-    type: number
-    sql: ${TABLE}.st_plxerr2 ;;
   }
 
   dimension: st_plxlim {
@@ -1866,29 +1145,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_pmdeclim ;;
   }
 
-  dimension: st_pmerr {
-    type: number
-    sql: ${TABLE}.st_pmerr ;;
-  }
-
-  dimension: st_pmlim {
-    type: number
-    sql: ${TABLE}.st_pmlim ;;
-  }
-
   dimension: st_pmra {
     type: number
     sql: ${TABLE}.st_pmra ;;
-  }
-
-  dimension: st_pmraerr {
-    type: number
-    sql: ${TABLE}.st_pmraerr ;;
-  }
-
-  dimension: st_pmralim {
-    type: number
-    sql: ${TABLE}.st_pmralim ;;
   }
 
   dimension: st_rad {
@@ -1901,21 +1160,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_radblend ;;
   }
 
-  dimension: st_raderr1 {
-    type: number
-    sql: ${TABLE}.st_raderr1 ;;
-  }
-
-  dimension: st_raderr2 {
-    type: number
-    sql: ${TABLE}.st_raderr2 ;;
-  }
-
-  dimension: st_radlim {
-    type: number
-    sql: ${TABLE}.st_radlim ;;
-  }
-
   dimension: st_radv {
     type: number
     sql: ${TABLE}.st_radv ;;
@@ -1924,21 +1168,6 @@ view: confirmed_kepler {
   dimension: st_radvblend {
     type: number
     sql: ${TABLE}.st_radvblend ;;
-  }
-
-  dimension: st_radverr1 {
-    type: number
-    sql: ${TABLE}.st_radverr1 ;;
-  }
-
-  dimension: st_radverr2 {
-    type: number
-    sql: ${TABLE}.st_radverr2 ;;
-  }
-
-  dimension: st_radvlim {
-    type: number
-    sql: ${TABLE}.st_radvlim ;;
   }
 
   dimension: st_rah {
@@ -1956,16 +1185,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_rcblend ;;
   }
 
-  dimension: st_rcerr {
-    type: number
-    sql: ${TABLE}.st_rcerr ;;
-  }
-
-  dimension: st_rclim {
-    type: number
-    sql: ${TABLE}.st_rclim ;;
-  }
-
   dimension: st_sp {
     type: number
     sql: ${TABLE}.st_sp ;;
@@ -1974,16 +1193,6 @@ view: confirmed_kepler {
   dimension: st_spblend {
     type: number
     sql: ${TABLE}.st_spblend ;;
-  }
-
-  dimension: st_sperr {
-    type: string
-    sql: ${TABLE}.st_sperr ;;
-  }
-
-  dimension: st_splim {
-    type: number
-    sql: ${TABLE}.st_splim ;;
   }
 
   dimension: st_spstr {
@@ -2001,21 +1210,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_teffblend ;;
   }
 
-  dimension: st_tefferr1 {
-    type: number
-    sql: ${TABLE}.st_tefferr1 ;;
-  }
-
-  dimension: st_tefferr2 {
-    type: number
-    sql: ${TABLE}.st_tefferr2 ;;
-  }
-
-  dimension: st_tefflim {
-    type: number
-    sql: ${TABLE}.st_tefflim ;;
-  }
-
   dimension: st_uj {
     type: number
     sql: ${TABLE}.st_uj ;;
@@ -2024,16 +1218,6 @@ view: confirmed_kepler {
   dimension: st_ujblend {
     type: number
     sql: ${TABLE}.st_ujblend ;;
-  }
-
-  dimension: st_ujerr {
-    type: number
-    sql: ${TABLE}.st_ujerr ;;
-  }
-
-  dimension: st_ujlim {
-    type: number
-    sql: ${TABLE}.st_ujlim ;;
   }
 
   dimension: st_umbj {
@@ -2046,16 +1230,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_umbjblend ;;
   }
 
-  dimension: st_umbjerr {
-    type: number
-    sql: ${TABLE}.st_umbjerr ;;
-  }
-
-  dimension: st_umbjlim {
-    type: number
-    sql: ${TABLE}.st_umbjlim ;;
-  }
-
   dimension: st_vj {
     type: number
     sql: ${TABLE}.st_vj ;;
@@ -2064,16 +1238,6 @@ view: confirmed_kepler {
   dimension: st_vjblend {
     type: number
     sql: ${TABLE}.st_vjblend ;;
-  }
-
-  dimension: st_vjerr {
-    type: number
-    sql: ${TABLE}.st_vjerr ;;
-  }
-
-  dimension: st_vjlim {
-    type: number
-    sql: ${TABLE}.st_vjlim ;;
   }
 
   dimension: st_vjmic {
@@ -2086,16 +1250,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_vjmicblend ;;
   }
 
-  dimension: st_vjmicerr {
-    type: number
-    sql: ${TABLE}.st_vjmicerr ;;
-  }
-
-  dimension: st_vjmiclim {
-    type: number
-    sql: ${TABLE}.st_vjmiclim ;;
-  }
-
   dimension: st_vjmrc {
     type: number
     sql: ${TABLE}.st_vjmrc ;;
@@ -2106,16 +1260,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_vjmrcblend ;;
   }
 
-  dimension: st_vjmrcerr {
-    type: string
-    sql: ${TABLE}.st_vjmrcerr ;;
-  }
-
-  dimension: st_vjmrclim {
-    type: number
-    sql: ${TABLE}.st_vjmrclim ;;
-  }
-
   dimension: st_vsini {
     type: number
     sql: ${TABLE}.st_vsini ;;
@@ -2124,21 +1268,6 @@ view: confirmed_kepler {
   dimension: st_vsiniblend {
     type: number
     sql: ${TABLE}.st_vsiniblend ;;
-  }
-
-  dimension: st_vsinierr1 {
-    type: number
-    sql: ${TABLE}.st_vsinierr1 ;;
-  }
-
-  dimension: st_vsinierr2 {
-    type: number
-    sql: ${TABLE}.st_vsinierr2 ;;
-  }
-
-  dimension: st_vsinilim {
-    type: number
-    sql: ${TABLE}.st_vsinilim ;;
   }
 
   dimension: st_wise1 {
@@ -2171,16 +1300,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_wise2blend ;;
   }
 
-  dimension: st_wise2err {
-    type: number
-    sql: ${TABLE}.st_wise2err ;;
-  }
-
-  dimension: st_wise2lim {
-    type: number
-    sql: ${TABLE}.st_wise2lim ;;
-  }
-
   dimension: st_wise3 {
     type: number
     sql: ${TABLE}.st_wise3 ;;
@@ -2189,16 +1308,6 @@ view: confirmed_kepler {
   dimension: st_wise3blend {
     type: number
     sql: ${TABLE}.st_wise3blend ;;
-  }
-
-  dimension: st_wise3err {
-    type: number
-    sql: ${TABLE}.st_wise3err ;;
-  }
-
-  dimension: st_wise3lim {
-    type: number
-    sql: ${TABLE}.st_wise3lim ;;
   }
 
   dimension: st_wise4 {
@@ -2211,16 +1320,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_wise4blend ;;
   }
 
-  dimension: st_wise4err {
-    type: number
-    sql: ${TABLE}.st_wise4err ;;
-  }
-
-  dimension: st_wise4lim {
-    type: number
-    sql: ${TABLE}.st_wise4lim ;;
-  }
-
   dimension: swasp_id {
     type: string
     sql: ${TABLE}.swasp_id ;;
@@ -2230,4 +1329,85 @@ view: confirmed_kepler {
     type: count
     drill_fields: []
   }
+  #########
+  ########
+  ######
+  #####
+  ###
+  ##
+  #
+
+
+  dimension: pl_st_npar {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_st_npar ;;
+  }
+  dimension: pl_st_nref {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_st_nref ;;
+  }
+
+
+  dimension: pl_trandeperr1 {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_trandeperr1 ;;
+  }
+  dimension: pl_trandeperr2 {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_trandeperr2 ;;
+  }
+  dimension: pl_trandeplim {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_trandeplim ;;
+  }
+
+
+  dimension: pl_ratdorerr1 {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_ratdorerr1 ;;
+  }
+  dimension: pl_ratdorerr2 {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_ratdorerr2 ;;
+  }
+  dimension: pl_ratdorlim {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_ratdorlim ;;
+  }
+  dimension: pl_ratrorerr1 {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_ratrorerr1 ;;
+  }
+  dimension: pl_ratrorerr2 {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_ratrorerr2 ;;
+  }
+  dimension: pl_ratrorlim {
+    hidden: yes
+    view_label: "Confirmed Kepler Planets"
+    type: number
+    sql: ${TABLE}.pl_ratrorlim ;;
+  }
+
+
 }
