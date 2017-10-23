@@ -556,7 +556,8 @@ view: confirmed_kepler {
   }
 
   dimension: planet_radius_solar {
-    view_label: "Length of a line segment from the center of the planet to its surface, measured in units of radius of the Sun. "
+    view_label: "Confirmed Kepler Planets"
+    description: "Length of a line segment from the center of the planet to its surface, measured in units of radius of the Sun. "
     type: number
     sql: ${TABLE}.pl_rads ;;
   }
@@ -701,169 +702,130 @@ view: confirmed_kepler {
     sql: ${TABLE}.rowupdate ;;
   }
 
-  dimension: st_actlx {
+  dimension: stellar_x_ray_activity {
+    description: "Stellar activity as measured by the total luminosity in X-rays. "
     type: number
     sql: ${TABLE}.st_actlx ;;
   }
 
-  dimension: st_actlxblend {
-    type: number
-    sql: ${TABLE}.st_actlxblend ;;
-  }
-
   dimension: st_actr {
+    hidden: yes
     view_label: "Confirmed Kepler Stars"
     type: number
     sql: ${TABLE}.st_actr ;;
   }
 
-  dimension: st_actrblend {
-    type: number
-    sql: ${TABLE}.st_actrblend ;;
-  }
-
-  dimension: st_acts {
+  dimension: stellar_activity_index_s {
+    description: "Chromospheric activity as measured by the S-index (ratio of the emission of the H and K Ca lines to that in nearby continuum).  "
     type: number
     sql: ${TABLE}.st_acts ;;
   }
 
-  dimension: st_actsblend {
-    type: number
-    sql: ${TABLE}.st_actsblend ;;
-  }
-
-
-  dimension: st_age {
+  dimension: stellar_age {
+    description: "The age of the host star. "
     type: number
     sql: ${TABLE}.st_age ;;
   }
 
-
-  dimension: st_bj {
+  dimension: stellar_brightness_b_band {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the B (Johnson) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_bj ;;
   }
 
-  dimension: st_bjblend {
-    type: number
-    sql: ${TABLE}.st_bjblend ;;
-  }
-
-  dimension: st_bmvj {
+  dimension: star_color_BV {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the difference between B and V (Johnson) bands.  "
     type: number
     sql: ${TABLE}.st_bmvj ;;
   }
 
-  dimension: st_bmvjblend {
-    type: number
-    sql: ${TABLE}.st_bmvjblend ;;
-  }
-
-
-  dimension: st_bmy {
+  dimension: star_color_by {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the difference between b and y (Stromgren) bands.  "
     type: number
     sql: ${TABLE}.st_bmy ;;
   }
 
-  dimension: st_bmyblend {
-    type: number
-    sql: ${TABLE}.st_bmyblend ;;
-  }
-
-
-  dimension: st_c1 {
+  dimension: star_color_c1 {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the c1 (Stromgren) system. "
     type: number
     sql: ${TABLE}.st_c1 ;;
   }
 
-  dimension: st_c1blend {
-    type: number
-    sql: ${TABLE}.st_c1blend ;;
-  }
-
-  dimension: st_colorn {
-    type: number
-    sql: ${TABLE}.st_colorn ;;
-  }
-
-  dimension: st_dens {
+  dimension: stellar_density {
+    description: "Amount of mass per unit of volume of the star.  "
     type: number
     sql: ${TABLE}.st_dens ;;
   }
 
-  dimension: st_dist {
+  dimension: distance_parsecs {
+    description: "Distance to the planetary system in units of parsecs. "
     type: number
     sql: ${TABLE}.st_dist ;;
   }
 
-  dimension: st_elat {
+  dimension: stellar_ecliptic_latitude_deg {
+    group_label: "Stellar Lat/Long"
+    description: "Ecliptic latitude of the planetary system in units of decimal degrees.  "
     type: number
     sql: ${TABLE}.st_elat ;;
   }
 
-  dimension: st_elon {
+  dimension: stellar_ecliptic_longitude_deg {
+    group_label: "Stellar Lat/Long"
+    description: "Ecliptic longitude of the planetary system in units of decimal degrees. "
     type: number
     sql: ${TABLE}.st_elon ;;
   }
 
-  dimension: st_glat {
+  dimension: stellar_galactic_latitude_deg {
+    group_label: "Stellar Lat/Long"
+    description: "Galactic latitude of the planetary system in units of decimal degrees.  "
     type: number
     sql: ${TABLE}.st_glat ;;
   }
 
-  dimension: st_glon {
+  dimension: stellar_galactic_longitude_deg {
+    group_label: "Stellar Lat/Long"
+    description: "Galactic longitude of the planetary system in units of decimal degrees. "
     type: number
     sql: ${TABLE}.st_glon ;;
   }
 
-  dimension: st_h {
+  dimension: stellar_brightness_h_band {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the H (2MASS) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_h ;;
   }
 
-  dimension: st_hblend {
-    type: number
-    sql: ${TABLE}.st_hblend ;;
-  }
-
-  dimension: st_hmk2 {
+  dimension: stellar_color_hks {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the difference between H and K (2MASS) bands.  "
     type: number
     sql: ${TABLE}.st_hmk2 ;;
   }
 
-  dimension: st_hmk2blend {
-    type: number
-    sql: ${TABLE}.st_hmk2blend ;;
-  }
-
-  dimension: st_ic {
+  dimension: stellar_brighness_i_band {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the I (Cousins) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_ic ;;
   }
 
-  dimension: st_icblend {
-    type: number
-    sql: ${TABLE}.st_icblend ;;
-  }
-
-  dimension: st_irac1 {
+  dimension: stellar_brightness_IRAC_36_band {
+    description: "Brightness of the host star as measured using the 3.6um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac1 ;;
   }
 
-  dimension: st_irac1blend {
-    type: number
-    sql: ${TABLE}.st_irac1blend ;;
-  }
-
-  dimension: st_irac2 {
+  dimension: stellar_brightness_IRAC_45_band {
+    description: "Brightness of the host star as measured using the 4.5um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac2 ;;
-  }
-
-  dimension: st_irac2blend {
-    type: number
-    sql: ${TABLE}.st_irac2blend ;;
   }
 
   dimension: st_irac3 {
@@ -871,19 +833,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_irac3 ;;
   }
 
-  dimension: st_irac3blend {
-    type: number
-    sql: ${TABLE}.st_irac3blend ;;
-  }
-
   dimension: st_irac4 {
     type: number
     sql: ${TABLE}.st_irac4 ;;
-  }
-
-  dimension: st_irac4blend {
-    type: number
-    sql: ${TABLE}.st_irac4blend ;;
   }
 
   dimension: st_iras1 {
@@ -891,19 +843,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_iras1 ;;
   }
 
-  dimension: st_iras1blend {
-    type: number
-    sql: ${TABLE}.st_iras1blend ;;
-  }
-
   dimension: st_iras2 {
     type: number
     sql: ${TABLE}.st_iras2 ;;
-  }
-
-  dimension: st_iras2blend {
-    type: number
-    sql: ${TABLE}.st_iras2blend ;;
   }
 
   dimension: st_iras3 {
@@ -911,19 +853,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_iras3 ;;
   }
 
-  dimension: st_iras3blend {
-    type: number
-    sql: ${TABLE}.st_iras3blend ;;
-  }
-
   dimension: st_iras4 {
     type: number
     sql: ${TABLE}.st_iras4 ;;
-  }
-
-  dimension: st_iras4blend {
-    type: number
-    sql: ${TABLE}.st_iras4blend ;;
   }
 
   dimension: st_j {
@@ -931,19 +863,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_j ;;
   }
 
-  dimension: st_jblend {
-    type: number
-    sql: ${TABLE}.st_jblend ;;
-  }
-
   dimension: st_jmh2 {
     type: number
     sql: ${TABLE}.st_jmh2 ;;
-  }
-
-  dimension: st_jmh2blend {
-    type: number
-    sql: ${TABLE}.st_jmh2blend ;;
   }
 
   dimension: st_jmk2 {
@@ -951,19 +873,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_jmk2 ;;
   }
 
-  dimension: st_jmk2blend {
-    type: number
-    sql: ${TABLE}.st_jmk2blend ;;
-  }
-
   dimension: st_k {
     type: number
     sql: ${TABLE}.st_k ;;
-  }
-
-  dimension: st_kblend {
-    type: number
-    sql: ${TABLE}.st_kblend ;;
   }
 
   dimension: st_logg {
@@ -971,19 +883,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_logg ;;
   }
 
-  dimension: st_loggblend {
-    type: number
-    sql: ${TABLE}.st_loggblend ;;
-  }
-
   dimension: st_lum {
     type: number
     sql: ${TABLE}.st_lum ;;
-  }
-
-  dimension: st_lumblend {
-    type: number
-    sql: ${TABLE}.st_lumblend ;;
   }
 
   dimension: st_m1 {
@@ -991,29 +893,14 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_m1 ;;
   }
 
-  dimension: st_m1blend {
-    type: number
-    sql: ${TABLE}.st_m1blend ;;
-  }
-
   dimension: st_mass {
     type: number
     sql: ${TABLE}.st_mass ;;
   }
 
-  dimension: st_massblend {
-    type: number
-    sql: ${TABLE}.st_massblend ;;
-  }
-
   dimension: st_metfe {
     type: number
     sql: ${TABLE}.st_metfe ;;
-  }
-
-  dimension: st_metfeblend {
-    type: number
-    sql: ${TABLE}.st_metfeblend ;;
   }
 
   dimension: st_metratio {
@@ -1026,29 +913,14 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_mips1 ;;
   }
 
-  dimension: st_mips1blend {
-    type: number
-    sql: ${TABLE}.st_mips1blend ;;
-  }
-
   dimension: st_mips2 {
     type: number
     sql: ${TABLE}.st_mips2 ;;
   }
 
-  dimension: st_mips2blend {
-    type: number
-    sql: ${TABLE}.st_mips2blend ;;
-  }
-
   dimension: st_mips3 {
     type: number
     sql: ${TABLE}.st_mips3 ;;
-  }
-
-  dimension: st_mips3blend {
-    type: number
-    sql: ${TABLE}.st_mips3blend ;;
   }
 
   dimension: st_naxa {
@@ -1096,11 +968,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_optmag ;;
   }
 
-  dimension: st_optmagblend {
-    type: number
-    sql: ${TABLE}.st_optmagblend ;;
-  }
-
   dimension: st_photn {
     type: number
     sql: ${TABLE}.st_photn ;;
@@ -1111,11 +978,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_plx ;;
   }
 
-  dimension: st_plxblend {
-    type: number
-    sql: ${TABLE}.st_plxblend ;;
-  }
-
   dimension: st_plxlim {
     type: number
     sql: ${TABLE}.st_plxlim ;;
@@ -1124,11 +986,6 @@ view: confirmed_kepler {
   dimension: st_pm {
     type: number
     sql: ${TABLE}.st_pm ;;
-  }
-
-  dimension: st_pmblend {
-    type: number
-    sql: ${TABLE}.st_pmblend ;;
   }
 
   dimension: st_pmdec {
@@ -1156,19 +1013,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_rad ;;
   }
 
-  dimension: st_radblend {
-    type: number
-    sql: ${TABLE}.st_radblend ;;
-  }
-
   dimension: st_radv {
     type: number
     sql: ${TABLE}.st_radv ;;
-  }
-
-  dimension: st_radvblend {
-    type: number
-    sql: ${TABLE}.st_radvblend ;;
   }
 
   dimension: st_rah {
@@ -1181,19 +1028,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_rc ;;
   }
 
-  dimension: st_rcblend {
-    type: number
-    sql: ${TABLE}.st_rcblend ;;
-  }
-
   dimension: st_sp {
     type: number
     sql: ${TABLE}.st_sp ;;
-  }
-
-  dimension: st_spblend {
-    type: number
-    sql: ${TABLE}.st_spblend ;;
   }
 
   dimension: st_spstr {
@@ -1206,19 +1043,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_teff ;;
   }
 
-  dimension: st_teffblend {
-    type: number
-    sql: ${TABLE}.st_teffblend ;;
-  }
-
   dimension: st_uj {
     type: number
     sql: ${TABLE}.st_uj ;;
-  }
-
-  dimension: st_ujblend {
-    type: number
-    sql: ${TABLE}.st_ujblend ;;
   }
 
   dimension: st_umbj {
@@ -1226,19 +1053,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_umbj ;;
   }
 
-  dimension: st_umbjblend {
-    type: number
-    sql: ${TABLE}.st_umbjblend ;;
-  }
-
   dimension: st_vj {
     type: number
     sql: ${TABLE}.st_vj ;;
-  }
-
-  dimension: st_vjblend {
-    type: number
-    sql: ${TABLE}.st_vjblend ;;
   }
 
   dimension: st_vjmic {
@@ -1246,19 +1063,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_vjmic ;;
   }
 
-  dimension: st_vjmicblend {
-    type: number
-    sql: ${TABLE}.st_vjmicblend ;;
-  }
-
   dimension: st_vjmrc {
     type: number
     sql: ${TABLE}.st_vjmrc ;;
-  }
-
-  dimension: st_vjmrcblend {
-    type: number
-    sql: ${TABLE}.st_vjmrcblend ;;
   }
 
   dimension: st_vsini {
@@ -1266,29 +1073,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_vsini ;;
   }
 
-  dimension: st_vsiniblend {
-    type: number
-    sql: ${TABLE}.st_vsiniblend ;;
-  }
-
   dimension: st_wise1 {
     type: number
     sql: ${TABLE}.st_wise1 ;;
-  }
-
-  dimension: st_wise1blend {
-    type: number
-    sql: ${TABLE}.st_wise1blend ;;
-  }
-
-  dimension: st_wise1err {
-    type: number
-    sql: ${TABLE}.st_wise1err ;;
-  }
-
-  dimension: st_wise1lim {
-    type: number
-    sql: ${TABLE}.st_wise1lim ;;
   }
 
   dimension: st_wise2 {
@@ -1296,29 +1083,14 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_wise2 ;;
   }
 
-  dimension: st_wise2blend {
-    type: number
-    sql: ${TABLE}.st_wise2blend ;;
-  }
-
   dimension: st_wise3 {
     type: number
     sql: ${TABLE}.st_wise3 ;;
   }
 
-  dimension: st_wise3blend {
-    type: number
-    sql: ${TABLE}.st_wise3blend ;;
-  }
-
   dimension: st_wise4 {
     type: number
     sql: ${TABLE}.st_wise4 ;;
-  }
-
-  dimension: st_wise4blend {
-    type: number
-    sql: ${TABLE}.st_wise4blend ;;
   }
 
   dimension: swasp_id {
