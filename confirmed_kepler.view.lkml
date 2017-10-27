@@ -997,6 +997,7 @@ view: confirmed_kepler {
     description: "Right Ascension of the planetary system in decimal hours. "
     type: number
     sql: ${TABLE}.st_rah ;;
+    drill_fields: [host_star_name]
   }
 
   dimension: r_band_brightness {
