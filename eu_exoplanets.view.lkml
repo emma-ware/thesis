@@ -17,6 +17,7 @@ view: eu_exoplanets {
   }
 
   dimension: dec {
+    label: "Declination"
     type: number
     sql: ${TABLE}.dec ;;
   }

@@ -18,36 +18,42 @@ view: confirmed_kepler {
   }
 
   dimension: gaia_distance {
+    group_label: "GAIA"
     description: "Distance computed from Gaia parallax. "
     type: number
     sql: ${TABLE}.gaia_dist ;;
   }
 
   dimension: gaia_host_star_magnitude {
+    group_label: "GAIA"
     description: "Brightness of the host star as measuring using the Gaia band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.gaia_gmag ;;
   }
 
   dimension: gaia_parallax {
+    group_label: "GAIA"
     description: "Gaia DR1 Difference in the angular position of a star as measured at two opposite positions within the Earth's orbit. "
     type: number
     sql: ${TABLE}.gaia_plx ;;
   }
 
   dimension: gaia_proper_motion{
+    group_label: "GAIA"
     description: "Gaia DR1 Total proper motion computed from the RA and Dec.  "
     type: number
     sql: ${TABLE}.gaia_pm ;;
   }
 
   dimension: gaia_proper_motion_declination {
+    group_label: "GAIA"
     description: "Gaia DR1 Angular change in declination over time as seen from the center of mass of the Solar System. "
     type: number
     sql: ${TABLE}.gaia_pmdec ;;
   }
 
   dimension: gaia_proper_motion_right_ascention {
+    group_label: "GAIA"
     description: "Gaia DR1 Angular change in right ascension over time as seen from the center of mass of the Solar System. "
     type: number
     sql: ${TABLE}.gaia_pmra ;;
@@ -73,6 +79,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_astrometery_flag {
+    group_label: "Flags"
     description: "Flag indicating if the planet host star exhibits astrometrical variations due to the planet (1=yes, 0=no) "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -80,6 +87,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_mass_earth_mass{
+    group_label: "Planet Mass"
     description: "Best planet mass measurement in units of masses of Earth. Either Mass, M*sin(i)/sin(i), or M*sin(i)."
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -87,18 +95,21 @@ view: confirmed_kepler {
   }
 
   dimension: planet_mass_earth_mass_upper_error {
+    group_label: "Planet Mass"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr1 ;;
   }
 
   dimension: planet_mass_earth_mass_lower_error {
+    group_label: "Planet Mass"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmasseerr2 ;;
   }
 
   dimension: planet_jupiter_mass {
+    group_label: "Planet Mass"
     view_label: "Confirmed Kepler Planets"
     description: "Planet Mass or M*sin(i)"
     type: number
@@ -106,24 +117,21 @@ view: confirmed_kepler {
   }
 
   dimension: planet_jupiter_mass_upper_error {
+    group_label: "Planet Mass"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmassjerr1 ;;
   }
 
   dimension: planet_jupiter_mass_lower_error {
+    group_label: "Planet Mass"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_bmassjerr2 ;;
   }
 
-  dimension: pl_bmassjlim {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_bmassjlim ;;
-  }
-
   dimension: mass_or_provenance {
+    group_label: "Planet Mass"
     view_label: "Confirmed Kepler Planets"
     description: "Is the value a planet Mass or M*sin(i)"
     type: string
@@ -131,6 +139,7 @@ view: confirmed_kepler {
   }
 
   dimension: circumbinary_flag {
+    group_label: "Flags"
     description: "Flag indicating whether the planet orbits a binary system (1=yes, 0=no) "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -160,6 +169,7 @@ view: confirmed_kepler {
   }
 
   dimension: pl_disc_reflink {
+    hidden: yes
     description: "reference link??"
     view_label: "Confirmed Kepler Planets"
     type: string
@@ -189,6 +199,7 @@ view: confirmed_kepler {
   }
 
   dimension: discovery_facility {
+    group_label: "Discovery Instruments"
     description: "Name of facility of planet discovery observations "
     view_label: "Confirmed Kepler Planets"
     type: string
@@ -203,6 +214,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_imaging_flag {
+    group_label: "Flags"
     description: "Flag indicating if the planet has been observed via imaging techniques (1=yes, 0=no)  "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -225,6 +237,7 @@ view: confirmed_kepler {
 
 
   dimension: discovery_instrument {
+    group_label: "Discovery Instruments"
     description: "Name of instrument of planet discovery observations"
     view_label: "Confirmed Kepler Planets"
     type: string
@@ -232,6 +245,7 @@ view: confirmed_kepler {
   }
 
   dimension: K2_mission_flag {
+    group_label: "Flags"
     description: "Flag indicating if the planetary system signature is present in data taken with the K2 Mission (1=yes, 0=no)."
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -239,6 +253,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_Kepler_flag {
+    group_label: "Flags"
     view_label: "Confirmed Kepler Planets"
     description: "Flag indicating if the planetary system signature is present in data taken with the Kepler mission (1=yes, 0=no)."
     type: number
@@ -252,16 +267,9 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_letter ;;
   }
 
-#
-#
-#
-# You ended here
-#
-#
-#
-#
 
   dimension: discovery_locale {
+    group_label: "Discovery Instruments"
     description: "Location of observation of planet discovery (Ground or Space) "
     view_label: "Confirmed Kepler Planets"
     type: string
@@ -269,6 +277,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_mass_earth_masses {
+    group_label: "Planet Mass"
     description: "Amount of matter contained in the planet, measured in units of masses of the Earth. "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -287,14 +296,9 @@ view: confirmed_kepler {
     type: number
     sql: ${TABLE}.pl_masseerr2 ;;
   }
-  dimension: pl_masselim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_masselim ;;
-  }
 
   dimension: planet_mass_jupiter_masses {
+    group_label: "Planet Mass (Jupiter Mass)"
     description: "Amount of matter contained in the planet, measured in units of masses of the Jupiter. "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -302,22 +306,18 @@ view: confirmed_kepler {
   }
 
   dimension: planet_mass_jupiter_masses_upper_error {
+    group_label: "Planet Mass (Jupiter Mass)"
     hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjerr1 ;;
   }
   dimension: planet_mass_jupiter_masses_lower_error {
+    group_label: "Planet Mass (Jupiter Mass)"
     hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_massjerr2 ;;
-  }
-  dimension: pl_massjlim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_massjlim ;;
   }
 
   dimension: number_of_moons {
@@ -328,12 +328,14 @@ view: confirmed_kepler {
   }
 
   dimension: planet_m_sinI_earth_mass {
+    group_label: "Planet Mass (Earth Mass)"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinie ;;
   }
 
   dimension: planet_m_sinI_jupiter_mass {
+    group_label: "Planet Mass (Jupiter Mass)"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_msinij ;;
@@ -361,6 +363,7 @@ view: confirmed_kepler {
   }
 
   dimension:  Orbital_Modulation_Flag {
+    group_label: "Flags"
     description: "Flag indicating whether the planet exhibits orbital modulations on the phase curve (1=yes, 0=no)  "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -368,6 +371,7 @@ view: confirmed_kepler {
   }
 
   dimension: eccentricity {
+    group_label: "Eccentricity"
     view_label: "Confirmed Kepler Planets"
     description: "Orbital eccentricity"
     type: number
@@ -375,23 +379,18 @@ view: confirmed_kepler {
   }
 
   dimension: eccentricity_upper_error {
+    group_label: "Eccentricity"
     view_label: "Confirmed Kepler Planets"
-    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr1 ;;
   }
   dimension: eccentricity_lower_error {
+    group_label: "Eccentricity"
     view_label: "Confirmed Kepler Planets"
-    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbeccenerr2 ;;
   }
-  dimension: pl_orbeccenlim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_orbeccenlim ;;
-  }
+
 
   dimension: inclination {
     view_label: "Confirmed Kepler Planets"
@@ -409,11 +408,6 @@ view: confirmed_kepler {
     hidden: yes
     type: number
     sql: ${TABLE}.pl_orbinclerr2 ;;
-  }
-  dimension: pl_orbincllim {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_orbincllim ;;
   }
 
   dimension: longitude_of_periastron {
@@ -442,14 +436,9 @@ view: confirmed_kepler {
     type: number
     sql: ${TABLE}.pl_orbpererr2 ;;
   }
-  dimension: pl_orbperlim {
-    description: "Limit of orbital period - not sure if needed"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_orbperlim ;;
-  }
 
   dimension: orbit_semi_major_axis {
+    group_label: "Semi-Major Axis"
     view_label: "Confirmed Kepler Planets"
     description: "Semi major axis of planet orbit in AU"
     type: number
@@ -457,22 +446,16 @@ view: confirmed_kepler {
   }
 
   dimension: SMA_upper_error {
+    group_label: "Semi-Major Axis"
     view_label: "Confirmed Kepler Planets"
-    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxerr1 ;;
   }
   dimension: SMA_lower_error{
+    group_label: "Semi-Major Axis"
     view_label: "Confirmed Kepler Planets"
-    hidden: yes
     type: number
     sql: ${TABLE}.pl_orbsmaxerr2 ;;
-  }
-  dimension: pl_orbsmaxlim {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_orbsmaxlim ;;
   }
 
   dimension: time_of_periastron_JD {
@@ -504,6 +487,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_radius_earth_radii {
+    group_label: "Planet Radius"
     description: "Length of a line segment from the center of the planet to its surface, measured in units of radius of the Earth.  "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -511,51 +495,43 @@ view: confirmed_kepler {
   }
 
   dimension: planet_radius_earth_radii_upper_limit {
+    group_label: "Planet Radius"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radeerr1 ;;
   }
 
   dimension: planet_radius_earth_radii_lower_limit {
+    group_label: "Planet Radius"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radeerr2 ;;
   }
 
-  dimension: pl_radelim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_radelim ;;
-  }
-
-  dimension: planet_radius {
+  dimension: planet_radius_jupiter_radii {
+    group_label: "Planet Radius"
     view_label: "Confirmed Kepler Planets"
     description: "Radius of planet in Jupiter radii"
     type: number
     sql: ${TABLE}.pl_radj ;;
   }
 
-  dimension: planet_radius_upper_error {
+  dimension: planet_radius_jupiter_radii_upper_error {
+    group_label: "Planet Radius"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radjerr1 ;;
   }
 
-  dimension: planet_radius_lower_error {
+  dimension: planet_radius_jupiter_radii_lower_error {
+    group_label: "Planet Radius"
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radjerr2 ;;
   }
 
-  dimension: pl_radjlim {
-    view_label: "Confirmed Kepler Planets"
-    hidden: yes
-    type: number
-    sql: ${TABLE}.pl_radjlim ;;
-  }
-
   dimension: planet_radius_solar {
+    group_label: "Planet Radius"
     view_label: "Confirmed Kepler Planets"
     description: "Length of a line segment from the center of the planet to its surface, measured in units of radius of the Sun. "
     type: number
@@ -563,23 +539,20 @@ view: confirmed_kepler {
   }
 
   dimension: planet_radius_solar_upper_limit {
+    group_label: "Planet Radius"
     hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radserr1 ;;
   }
   dimension: planet_radius_solar_lower_limit {
+    group_label: "Planet Radius"
     hidden: yes
     view_label: "Confirmed Kepler Planets"
     type: number
     sql: ${TABLE}.pl_radserr2 ;;
   }
-  dimension: pl_radslim {
-    hidden: yes
-    view_label: "Confirmed Kepler Planets"
-    type: number
-    sql: ${TABLE}.pl_radslim ;;
-  }
+
 
   dimension: planet_star_distance_over_radius {
     description: "The distance between the planet and the star at mid-transit divided by the stellar radius. For the case of zero orbital eccentricity, the distance at mid-transit is the semi-major axis of the planetary orbit.  "
@@ -605,6 +578,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_rv_flag {
+    group_label: "Flags"
     description: "Flag indicating if the planet host star exhibits radial velocity variations due to the planet (1=yes, 0=no)"
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -618,7 +592,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_status ;;
   }
 
-  dimension: planet_telescope {
+  dimension: telescope {
+    group_label: "Discovery Instruments"
     description: "Name of telescope of planet discovery observations  "
     view_label: "Confirmed Kepler Planets"
     type: string
@@ -640,6 +615,7 @@ view: confirmed_kepler {
   }
 
   dimension: transit_flag {
+    group_label: "Flags"
     description: "Flag indicating if the planet transits its host star (1=yes, 0=no)  "
     view_label: "Confirmed Kepler Planets"
     type: number
@@ -661,6 +637,7 @@ view: confirmed_kepler {
   }
 
   dimension: planet_TTVflag {
+    group_label: "Flags"
     view_label: "Confirmed Kepler Planets"
     description: "Flag indicating if the planet orbit exhibits transit timing variations from another planet in the system (1=yes, 0=no)."
     type: number
@@ -673,11 +650,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.ra ;;
   }
 
-  dimension: ra_str {
-    hidden: yes
-    type: string
-    sql: ${TABLE}.ra_str ;;
-  }
 
   dimension: rowid {
     description: "Row ID in Kepler Table"
@@ -708,12 +680,6 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_actlx ;;
   }
 
-  dimension: st_actr {
-    hidden: yes
-    view_label: "Confirmed Kepler Stars"
-    type: number
-    sql: ${TABLE}.st_actr ;;
-  }
 
   dimension: stellar_activity_index_s {
     description: "Chromospheric activity as measured by the S-index (ratio of the emission of the H and K Ca lines to that in nearby continuum).  "
@@ -727,28 +693,28 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_age ;;
   }
 
-  dimension: stellar_brightness_b_band {
+  dimension: B_band_brightness {
     group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the B (Johnson) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_bj ;;
   }
 
-  dimension: star_color_BV {
+  dimension: BV_band_color {
     group_label: "Stellar Color"
     description: "Color of the star as measured by the difference between B and V (Johnson) bands.  "
     type: number
     sql: ${TABLE}.st_bmvj ;;
   }
 
-  dimension: star_color_by {
+  dimension: BY_band_color {
     group_label: "Stellar Color"
     description: "Color of the star as measured by the difference between b and y (Stromgren) bands.  "
     type: number
     sql: ${TABLE}.st_bmy ;;
   }
 
-  dimension: star_color_c1 {
+  dimension: color_c1 {
     group_label: "Stellar Color"
     description: "Color of the star as measured by the c1 (Stromgren) system. "
     type: number
@@ -795,7 +761,7 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_glon ;;
   }
 
-  dimension: stellar_brightness_h_band {
+  dimension: h_band_brightness {
     group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the H (2MASS) band in units of magnitudes.  "
     type: number
@@ -809,56 +775,64 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_hmk2 ;;
   }
 
-  dimension: stellar_brighness_i_band {
+  dimension: i_band_brightness {
     group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the I (Cousins) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_ic ;;
   }
 
-  dimension: stellar_brightness_IRAC_36_band {
+  dimension: IRAC_36_band_brightness {
+    group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the 3.6um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac1 ;;
   }
 
-  dimension: stellar_brightness_IRAC_45_band {
+  dimension: IRAC_45_band_brightness {
+    group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the 4.5um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac2 ;;
   }
 
-  dimension: stellar_brightness_IRAC_58_band {
+  dimension: IRAC_58_band_brightness {
+    group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the 5.8um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac3 ;;
   }
 
-  dimension: stellar_brightness_IRAC_80_band {
+  dimension: IRAC_80_band_brightness {
+    group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the 8.0um (IRAC) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_irac4 ;;
   }
 
-  dimension: stellar_brightness_j_band {
+  dimension: j_band_brightness {
+    group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the J (2MASS) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_j ;;
   }
 
-  dimension: stellar_color_jh_band {
+  dimension: color_jh_band {
+    group_label: "Stellar Color"
     description: "Color of the star as measured by the difference between J and H (2MASS) bands.  "
     type: number
     sql: ${TABLE}.st_jmh2 ;;
   }
 
-  dimension: stellar_color_kk_band {
+  dimension: color_kk_band {
+    group_label: "Stellar Color"
     description: "Color of the star as measured by the difference between K and K (2MASS) bands.  "
     type: number
     sql: ${TABLE}.st_jmk2 ;;
   }
 
-  dimension: stellar_brightness_k_band {
+  dimension: k_band_brightness {
+    group_label: "Stellar Brightness"
     description: "Brightness of the host star as measured using the K (2MASS) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_k ;;
@@ -876,7 +850,8 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_lum ;;
   }
 
-  dimension: stellar_color_m1 {
+  dimension: color_m1 {
+    group_label: "Stellar Color"
     description: "Color of the star as measured by the m1 (Stromgren) system. "
     type: number
     sql: ${TABLE}.st_m1 ;;
@@ -963,142 +938,164 @@ view: confirmed_kepler {
     sql: ${TABLE}.st_nts ;;
   }
 
-  dimension: st_optband {
+  dimension: optical_magnitue_band {
+    description: "Band corresponding to the Optical Magnitude. Options are: V (Johnson) or Kepler-band. "
     type: string
     sql: ${TABLE}.st_optband ;;
   }
 
-  dimension: st_optmag {
+  dimension: optical_magnitude {
+    description: "Brightness of the host star as measured using the V (Johnson) or the Kepler-band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_optmag ;;
   }
 
-  dimension: st_photn {
+  dimension: number_of_photometry_measurements{
+    description: "Number of photometry measurements available for this star in the NASA Exoplanet Archive.  "
+    group_label: "Number of..."
     type: number
     sql: ${TABLE}.st_photn ;;
   }
 
-  dimension: st_plx {
+  dimension: parallax {
+    description: "Difference in the angular position of a star as measured at two opposite positions within the Earth's orbit.  "
     type: number
     sql: ${TABLE}.st_plx ;;
   }
 
-  dimension: st_plxlim {
-    type: number
-    sql: ${TABLE}.st_plxlim ;;
-  }
-
-  dimension: st_pm {
+  dimension: total_proper_motion {
+    description: "Angular change in position over time as seen from the center of mass of the Solar System. "
     type: number
     sql: ${TABLE}.st_pm ;;
   }
 
-  dimension: st_pmdec {
+  dimension: dec_proper_motion {
+    description: "Angular change in declination over time as seen from the center of mass of the Solar System.  "
     type: number
     sql: ${TABLE}.st_pmdec ;;
   }
 
-  dimension: st_pmdecerr {
-    type: number
-    sql: ${TABLE}.st_pmdecerr ;;
-  }
-
-  dimension: st_pmdeclim {
-    type: number
-    sql: ${TABLE}.st_pmdeclim ;;
-  }
-
-  dimension: st_pmra {
+  dimension: ra_proper_motion {
+    description: "Angular change in right ascension over time as seen from the center of mass of the Solar System.  "
     type: number
     sql: ${TABLE}.st_pmra ;;
   }
 
-  dimension: st_rad {
+  dimension: stellar_radius {
+    description: "Length of a line segment from the center of the star to its surface, measured in units of radius of the Sun. "
     type: number
     sql: ${TABLE}.st_rad ;;
   }
 
-  dimension: st_radv {
+  dimension: stellar_radial_velocity {
+    description: "Velocity of the star in the direction of the line of sight. "
     type: number
     sql: ${TABLE}.st_radv ;;
   }
 
-  dimension: st_rah {
+  dimension: right_ascention {
+    description: "Right Ascension of the planetary system in decimal hours. "
     type: number
     sql: ${TABLE}.st_rah ;;
   }
 
-  dimension: st_rc {
+  dimension: r_band_brightness {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the R (Cousins) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_rc ;;
   }
+#
+#   dimension: spectral_type {
+#     description: "Classification of the star based on their spectral characteristics following the Morgan-Keenan system.  "
+#     type: number
+#     sql: ${TABLE}.st_sp ;;
+#   }
 
-  dimension: st_sp {
-    type: number
-    sql: ${TABLE}.st_sp ;;
-  }
-
-  dimension: st_spstr {
+  dimension: spectral_type {
+    description: "Classification of the star based on their spectral characteristics following the Morgan-Keenan system.  "
     type: string
     sql: ${TABLE}.st_spstr ;;
+    drill_fields: [host_star_name, number_of_planets, method_of_discovery]
   }
 
-  dimension: st_teff {
+  dimension: effective_temperature {
+    description: "Temperature of the star as modeled by a black body emitting the same total amount of electromagnetic radiation."
     type: number
     sql: ${TABLE}.st_teff ;;
   }
 
-  dimension: st_uj {
+  dimension: u_band_brightness {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the U (Johnson) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_uj ;;
   }
 
-  dimension: st_umbj {
+  dimension: color_UB_band {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the difference between U and B (Johnson) bands.  "
     type: number
     sql: ${TABLE}.st_umbj ;;
   }
 
-  dimension: st_vj {
+  dimension: v_band_brightness {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the V (Johnson) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_vj ;;
   }
 
-  dimension: st_vjmic {
+  dimension: color_VI_band {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the difference between V (Johnson) and I (Cousins) bands.  "
     type: number
     sql: ${TABLE}.st_vjmic ;;
   }
 
-  dimension: st_vjmrc {
+  dimension: color_VR_band {
+    group_label: "Stellar Color"
+    description: "Color of the star as measured by the difference between V (Johnson) and R (Cousins) bands.  "
     type: number
     sql: ${TABLE}.st_vjmrc ;;
   }
 
-  dimension: st_vsini {
+  dimension: rotational_velocity_vsini {
+    description: "Rotational velocity at the equator of the star multiplied by the sine of the inclination. "
     type: number
     sql: ${TABLE}.st_vsini ;;
   }
 
-  dimension: st_wise1 {
+  dimension: WISE_34um {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the 3.4um (WISE) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_wise1 ;;
   }
 
-  dimension: st_wise2 {
+  dimension: WISE_46um {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the 4.6um (WISE) band in units of magnitudes. "
     type: number
     sql: ${TABLE}.st_wise2 ;;
   }
 
-  dimension: st_wise3 {
+  dimension: WISE_12um {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the 12.0um (WISE) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_wise3 ;;
   }
 
-  dimension: st_wise4 {
+  dimension: WISE_22um {
+    group_label: "Stellar Brightness"
+    description: "Brightness of the host star as measured using the 22.0um (WISE) band in units of magnitudes.  "
     type: number
     sql: ${TABLE}.st_wise4 ;;
   }
 
-  dimension: swasp_id {
+  dimension: SWASP_identifier {
+    description: "Name of the star as given by the SuperWASP (Wide Angle Search for Planets) project. "
     type: string
     sql: ${TABLE}.swasp_id ;;
   }
