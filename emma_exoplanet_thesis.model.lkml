@@ -23,3 +23,17 @@ explore: eu_exoplanets {
 }
 
 explore: kepler_koi {}
+
+# explore: numbers {
+#   join: confirmed_kepler {
+#     type: cross
+#     relationship: many_to_many
+#     sql:  ;;
+#   }
+# }
+
+# explore: numbers {
+#   join: confirmed_kepler {
+#     sql: ${numbers.numbers} UNION ${confirmed_kepler.rowid} ;;
+#   }
+# }

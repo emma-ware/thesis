@@ -4,11 +4,28 @@
 view: confirmed_kepler {
   sql_table_name: exoplanet_thesis.confirmed_kepler ;;
 
+
+#   derived_table: {
+#     sql: select *, (UNNEST(GENERATE_ARRAY(0,100,1)) as n) from exoplanet_thesis.confirmed_kepler ;;
+#   }
+
   dimension: declination {
     description: "Declination of the planetary system in decimal degrees. "
     type: number
     sql: ${TABLE}.dec ;;
   }
+
+  dimension: numbers {
+    type: number
+    sql: ${TABLE}.n ;;
+  }
+
+#   dimension: aaa {
+#     description: "numeric"
+#     type: number
+#     sql: UNNEST(GENERATE_ARRAY(0,100,1)) n
+#      ;;
+#   }
 
   dimension: dec_str {
     description: "Declination of the planetary system in sexagesimal notation."
@@ -1018,6 +1035,11 @@ view: confirmed_kepler {
     type: string
     sql: ${TABLE}.st_spstr ;;
     drill_fields: [host_star_name, number_of_planets, method_of_discovery]
+  }
+
+  dimension: cleaned_spectral_type {
+    type: string
+    sql: substr(confirmed_kepler.st_spstr,0,1) ;;
   }
 
   dimension: effective_temperature {
