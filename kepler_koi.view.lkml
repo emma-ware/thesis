@@ -1,182 +1,221 @@
 view: kepler_koi {
   sql_table_name: exoplanet_thesis.kepler_koi ;;
 
-  dimension: dec {
+  dimension: planet_declination {
     type: number
     sql: ${TABLE}.dec ;;
   }
 
-  dimension: kepid {
+  dimension: kepler_ID {
+    description: "Target identification number, as listed in the Kepler Input Catalog (KIC). "
     type: number
     value_format_name: id
     sql: ${TABLE}.kepid ;;
   }
 
   dimension: kepler_name {
+    description: "Kepler number name in the form Kepler-N, plus a lower-case letter, identifying the planet."
     primary_key: yes
     type: string
     sql: ${TABLE}.kepler_name ;;
   }
 
-  dimension: kepoi_name {
+  dimension: kepler_object_of_interest_name {
+    description: "A number used to identify and track a Kepler Object of Interest (KOI). A KOI is a target identified by the Kepler Project that displays at least one transit-like sequence within Kepler time-series photometry that appears to be of astrophysical origin and initially consistent with a planetary transit hypothesis. A KOI name has an integer and a decimal part of the format KNNNNN.DD. The integer part designates the target star; the two-digit decimal part identifies a unique transiting object associated with that star. It is not necessarily the planetary candidate listed in that order within a DV report, nor does it indicate the distance of the planet from the the host star relative to other planets in the system."
     type: string
     sql: ${TABLE}.kepoi_name ;;
   }
 
-  dimension: koi_bin_oedp_sig {
-    type: number
-    sql: ${TABLE}.koi_bin_oedp_sig ;;
-  }
+#   dimension: koi_bin_oedp_sig { NO idea what this is
+#     type: number
+#     sql: ${TABLE}.koi_bin_oedp_sig ;;
+#   }
 
   dimension: koi_comment {
+    description: "A description of the reason why an object's disposition has been given as false positive. APO: Active Pixel Offset The pixels showing the transit do not coincide with the target star, indicating that the transit is actually on a background object. Binary: Indicates the transit event is due to an eclipsing binary, not a planet. EB: Target is an eclipsing binary, or there is an unresolved background binary. odd-even: The depth of the even-numbered transits are statistically different than the depths of the odd-numbered transits; this is a sign of a background eclipsing binary. V-shaped: Likely a grazing eclipsing binary. SB1: Target star is a single-lined spectroscopic binary. SB2: Target star is a double-lined spectroscopic binary."
     type: string
     sql: ${TABLE}.koi_comment ;;
   }
 
-  dimension: koi_count {
+  dimension: number_of_planets{
+    description: "Number of planet candidates identified in a system."
     type: number
     sql: ${TABLE}.koi_count ;;
   }
 
-  dimension: koi_datalink_dvr {
+  dimension: link_to_DV_report {
+    hidden: yes
     type: string
     sql: ${TABLE}.koi_datalink_dvr ;;
   }
 
-  dimension: koi_datalink_dvs {
+  dimension: link_to_DV_summary {
+    description: "This is the relative path for the data validation summary"
+    hidden: yes
     type: string
     sql: ${TABLE}.koi_datalink_dvs ;;
   }
 
-  dimension: koi_depth {
+  dimension: transit_depth {
+    description: "(parts per million) The fraction of stellar flux lost at the minimum of the planetary transit. Transit depths are typically computed from a best-fit model produced by a Mandel-Agol (2002) model fit to a multi-quarter Kepler light curve, assuming a linear orbital ephemeris."
     type: number
     sql: ${TABLE}.koi_depth ;;
   }
 
   dimension: koi_dicco_mdec {
+    group_label: "Angular Offsets"
     type: number
     sql: ${TABLE}.koi_dicco_mdec ;;
   }
 
 
   dimension: koi_dicco_mra {
+    group_label: "Angular Offsets"
     type: number
     sql: ${TABLE}.koi_dicco_mra ;;
   }
 
   dimension: koi_dicco_msky {
+    group_label: "Angular Offsets"
     type: number
     sql: ${TABLE}.koi_dicco_msky ;;
   }
 
-
   dimension: koi_dikco_mdec {
+    group_label: "Angular Offsets"
     type: number
     sql: ${TABLE}.koi_dikco_mdec ;;
   }
 
   dimension: koi_dikco_mra {
+    group_label: "Angular Offsets"
     type: number
     sql: ${TABLE}.koi_dikco_mra ;;
   }
 
   dimension: koi_dikco_msky {
+    group_label: "Angular Offsets"
     type: number
     sql: ${TABLE}.koi_dikco_msky ;;
   }
 
-  dimension: koi_disp_prov {
+  dimension: Disposition_provenance  {
     type: string
     sql: ${TABLE}.koi_disp_prov ;;
   }
 
-  dimension: koi_disposition {
+  dimension: planet_status {
+    description: "The category of this KOI from the Exoplanet Archive. Current values are CANDIDATE, FALSE POSITIVE, NOT DISPOSITIONED or CONFIRMED. All KOIs marked as CONFIRMED are also listed in the Exoplanet Archive Confirmed Planet table."
     type: string
     sql: ${TABLE}.koi_disposition ;;
   }
 
-  dimension: koi_dor {
+  dimension: planet_star_distance_over_radius {
+    description: "The distance between the planet and the star at mid-transit divided by the stellar radius. For the case of zero orbital eccentricity, the distance at mid-transit is the semi-major axis of the planetary orbit."
     type: number
     sql: ${TABLE}.koi_dor ;;
   }
 
-  dimension: koi_duration {
+  dimension: transit_duration {
+    description: "Hours. The duration of the observed transits. Duration is measured from first contact between the planet and star until last contact. "
     type: number
     sql: ${TABLE}.koi_duration ;;
   }
 
 
-  dimension: koi_eccen {
+  dimension: eccentricity {
     type: number
     sql: ${TABLE}.koi_eccen ;;
   }
 
-  dimension: koi_fittype {
+  dimension: planetary_fit_type {
+    description: "LS (Least Squares fit)
+MCMC (Markov Chain Monte Carlo fit)
+DV (Data Validation pipeline fit)
+none (fit is not provided, only orbital period, transit epoch and transit duration are reported)
+LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     type: string
     sql: ${TABLE}.koi_fittype ;;
   }
 
-  dimension: koi_fpflag_co {
+  dimension: centroid_offset_flag {
+    description: "The source of the signal is from a nearby star, as inferred by measuring the centroid location of the image both in and out of transit, or by the strength of the transit signal in the target's outer (halo) pixels as compared to the transit signal from the pixels in the optimal (or core) aperture. "
+    group_label: "Flags"
     type: number
     sql: ${TABLE}.koi_fpflag_co ;;
   }
 
-  dimension: koi_fpflag_ec {
+  dimension: contamination_flag {
+    description: "The KOI shares the same period and epoch as another object and is judged to be the result of flux contamination in the aperture or electronic crosstalk."
+    group_label: "Flags"
     type: number
     sql: ${TABLE}.koi_fpflag_ec ;;
   }
 
-  dimension: koi_fpflag_nt {
+  dimension: Non_transit_flag {
+    description: "A KOI whose light curve is not consistent with that of a transiting planet. This includes, but is not limited to, instrumental artifacts, non-eclipsing variable stars, and spurious (very low SNR) detections. "
+    group_label: "Flags"
     type: number
     sql: ${TABLE}.koi_fpflag_nt ;;
   }
 
-  dimension: koi_fpflag_ss {
+  dimension: stellar_eclispe_flag{
+    description: "A KOI that is observed to have a significant secondary event, transit shape, or out-of-eclipse variability, which indicates that the transit-like event is most likely caused by an eclipsing binary. However, self-luminous, hot Jupiters with a visible secondary eclipse will also have this flag set, but with a disposition of PC. "
+    group_label: "Flags"
     type: number
     sql: ${TABLE}.koi_fpflag_ss ;;
   }
 
   dimension: koi_fwm_pdeco {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_pdeco ;;
   }
 
   dimension: koi_fwm_prao {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_prao ;;
   }
 
   dimension: koi_fwm_sdec {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_sdec ;;
   }
 
   dimension: koi_fwm_sdeco {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_sdeco ;;
   }
 
   dimension: koi_fwm_sra {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_sra ;;
   }
 
   dimension: koi_fwm_srao {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_srao ;;
   }
 
   dimension: koi_fwm_stat_sig {
+    group_label: "Flux Weighted Parameters"
     type: number
     sql: ${TABLE}.koi_fwm_stat_sig ;;
   }
 
-  dimension: koi_gmag {
+  dimension: g_band_magnitude {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_gmag ;;
   }
 
-  dimension: koi_hmag {
+  dimension: h_band_magnitude {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_hmag ;;
   }
@@ -358,16 +397,6 @@ view: kepler_koi {
     sql: ${TABLE}.koi_smass ;;
   }
 
-  dimension: koi_smass_err1 {
-    type: number
-    sql: ${TABLE}.koi_smass_err1 ;;
-  }
-
-  dimension: koi_smass_err2 {
-    type: number
-    sql: ${TABLE}.koi_smass_err2 ;;
-  }
-
   dimension: koi_smet {
     type: number
     sql: ${TABLE}.koi_smet ;;
@@ -468,6 +497,6 @@ view: kepler_koi {
 
   measure: count {
     type: count
-    drill_fields: [koi_tce_delivname, kepler_name, kepoi_name]
+    drill_fields: [kepler_name]
   }
 }

@@ -24,6 +24,8 @@ explore: eu_exoplanets {
 
 explore: kepler_koi {}
 
+explore: numbers {}
+
 # explore: numbers {
 #   join: confirmed_kepler {
 #     type: cross
