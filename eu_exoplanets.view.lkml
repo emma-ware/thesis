@@ -12,11 +12,12 @@ view: eu_exoplanets {
   }
 
   dimension: angular_distance {
+    description: "In arcseconds"
     type: number
     sql: ${TABLE}.angular_distance ;;
   }
 
-  dimension: dec {
+  dimension: declination {
     label: "Declination"
     type: number
     sql: ${TABLE}.dec ;;
@@ -27,7 +28,7 @@ view: eu_exoplanets {
     sql: ${TABLE}.detection_type ;;
   }
 
-  dimension: discovered {
+  dimension: discovered_year {
     type: number
     sql: ${TABLE}.discovered ;;
   }
@@ -37,182 +38,115 @@ view: eu_exoplanets {
     sql: ${TABLE}.eccentricity ;;
   }
 
-  dimension: eccentricity_error_max {
-    type: number
-    sql: ${TABLE}.eccentricity_error_max ;;
-  }
+  #dimension: geometric_albedo {
+  # type: number
+  #  sql: ${TABLE}.geometric_albedo ;;
+  #}
 
-  dimension: eccentricity_error_min {
-    type: number
-    sql: ${TABLE}.eccentricity_error_min ;;
-  }
-
-  dimension: geometric_albedo {
-    type: number
-    sql: ${TABLE}.geometric_albedo ;;
-  }
-
-  dimension: geometric_albedo_error_max {
-    type: string
-    sql: ${TABLE}.geometric_albedo_error_max ;;
-  }
-
-  dimension: geometric_albedo_error_min {
-    type: string
-    sql: ${TABLE}.geometric_albedo_error_min ;;
-  }
-
-  dimension: hot_point_lon {
+  dimension: longitude_of_hottest_point{
+    description: "Degrees, longitude of the planet hottest point"
     type: string
     sql: ${TABLE}.hot_point_lon ;;
   }
 
   dimension: impact_parameter {
+    description: " minimum, in stellar radius units, of distance of the planet to the stellar center for transiting planets"
     type: number
     sql: ${TABLE}.impact_parameter ;;
   }
 
-  dimension: impact_parameter_error_max {
-    type: number
-    sql: ${TABLE}.impact_parameter_error_max ;;
-  }
-
-  dimension: impact_parameter_error_min {
-    type: number
-    sql: ${TABLE}.impact_parameter_error_min ;;
-  }
-
   dimension: inclination {
+    description: "inclination of planet orbit, angle between the planet orbit and the sky plane"
     type: number
     sql: ${TABLE}.inclination ;;
   }
 
-  dimension: inclination_error_max {
-    type: number
-    sql: ${TABLE}.inclination_error_max ;;
-  }
-
-  dimension: inclination_error_min {
-    type: number
-    sql: ${TABLE}.inclination_error_min ;;
-  }
-
-  dimension: k {
+  dimension: radial_velocity_curve_amplitude {
+    description: "semi-amplitude of the radial velocity curve"
     type: number
     sql: ${TABLE}.k ;;
   }
 
-  dimension: k_error_max {
-    type: number
-    sql: ${TABLE}.k_error_max ;;
-  }
-
-  dimension: k_error_min {
-    type: number
-    sql: ${TABLE}.k_error_min ;;
-  }
-
   dimension: lambda_angle {
+    description: "sky-projected angle between the planetary orbital spin and the stellar rotational spin"
     type: number
     sql: ${TABLE}.lambda_angle ;;
   }
 
-  dimension: lambda_angle_error_max {
-    type: number
-    sql: ${TABLE}.lambda_angle_error_max ;;
-  }
 
-  dimension: lambda_angle_error_min {
-    type: number
-    sql: ${TABLE}.lambda_angle_error_min ;;
-  }
-
-  dimension: log_g {
+  dimension: surface_gravity {
+    description: "Surface gravity"
     type: number
     sql: ${TABLE}.log_g ;;
   }
 
-  dimension: mag_h {
+  dimension: h_band_magnitude {
+    description: "apparent magnitude in the H band"
+    group_label: "Star Brightness"
     type: number
     sql: ${TABLE}.mag_h ;;
   }
 
-  dimension: mag_i {
+  dimension: i_band_magnitude {
+    description: "apparent magnitude in the I band"
+    group_label: "Star Brightness"
     type: number
     sql: ${TABLE}.mag_i ;;
   }
 
-  dimension: mag_j {
+  dimension: j_band_magnitude {
+    description: "apparent magnitude in the J band"
+    group_label: "Star Brightness"
     type: number
     sql: ${TABLE}.mag_j ;;
   }
 
-  dimension: mag_k {
+  dimension: k_band_magnitude {
+    description: "apparent magnitude in the K band"
+    group_label: "Star Brightness"
     type: number
     sql: ${TABLE}.mag_k ;;
   }
 
-  dimension: mag_v {
+  dimension: v_band_magnitude {
+    description: "apparent magnitude in the V band"
+    group_label: "Star Brightness"
     type: number
     sql: ${TABLE}.mag_v ;;
   }
 
   dimension: mass {
+    description: "Jupiter Mass"
     type: number
     sql: ${TABLE}.mass ;;
   }
 
   dimension: mass_detection_type {
+    description: "Method of measurement of the planet mass (RV, astrometry, planet model for direct imaging)"
     type: string
     sql: ${TABLE}.mass_detection_type ;;
   }
 
-  dimension: mass_error_max {
-    type: number
-    sql: ${TABLE}.mass_error_max ;;
-  }
-
-  dimension: mass_error_min {
-    type: number
-    sql: ${TABLE}.mass_error_min ;;
-  }
-
   dimension: mass_sini {
+    description: " minimum mass of the planet due to inclination effect"
     type: number
     sql: ${TABLE}.mass_sini ;;
   }
 
-  dimension: mass_sini_error_max {
-    type: number
-    sql: ${TABLE}.mass_sini_error_max ;;
-  }
-
-  dimension: mass_sini_error_min {
-    type: number
-    sql: ${TABLE}.mass_sini_error_min ;;
-  }
-
   dimension: molecules {
+    description: "Species detected in the planet"
     type: string
     sql: ${TABLE}.molecules ;;
   }
 
-  dimension: omega {
+  dimension: periapse_longitude {
+    description: "Angle between the periapse and the line nodes in the orbit plane"
     type: number
     sql: ${TABLE}.omega ;;
   }
 
-  dimension: omega_error_max {
-    type: number
-    sql: ${TABLE}.omega_error_max ;;
-  }
-
-  dimension: omega_error_min {
-    type: number
-    sql: ${TABLE}.omega_error_min ;;
-  }
-
   dimension: orbital_period {
+    description: "Orbital period of the planet in days"
     type: number
     sql: ${TABLE}.orbital_period ;;
   }
@@ -237,59 +171,32 @@ view: eu_exoplanets {
     sql: ${TABLE}.publication_status ;;
   }
 
-  dimension: ra {
+  dimension: right_ascention {
     type: number
     sql: ${TABLE}.ra ;;
   }
 
-  dimension: radius {
+  dimension: planet_radius {
+    description: "In Jupiter Radii"
     type: number
     sql: ${TABLE}.radius ;;
   }
 
   dimension: radius_detection_type {
+    description: "Method of measurement of the planet radius (transit, planet model for direct imaging)"
     type: string
     sql: ${TABLE}.radius_detection_type ;;
   }
 
-  dimension: radius_error_max {
-    type: number
-    sql: ${TABLE}.radius_error_max ;;
-  }
-
-  dimension: radius_error_min {
-    type: number
-    sql: ${TABLE}.radius_error_min ;;
-  }
-
-  dimension: semi_major_axis {
+  dimension: planet_semi_major_axis {
+    description: "In AU"
     type: number
     sql: ${TABLE}.semi_major_axis ;;
-  }
-
-  dimension: semi_major_axis_error_max {
-    type: number
-    sql: ${TABLE}.semi_major_axis_error_max ;;
-  }
-
-  dimension: semi_major_axis_error_min {
-    type: number
-    sql: ${TABLE}.semi_major_axis_error_min ;;
   }
 
   dimension: star_age {
     type: number
     sql: ${TABLE}.star_age ;;
-  }
-
-  dimension: star_age_error_max {
-    type: number
-    sql: ${TABLE}.star_age_error_max ;;
-  }
-
-  dimension: star_age_error_min {
-    type: number
-    sql: ${TABLE}.star_age_error_min ;;
   }
 
   dimension: star_alternate_names {
@@ -298,58 +205,33 @@ view: eu_exoplanets {
   }
 
   dimension: star_detected_disc {
+    description: "(direct imaging or IR excess) disc detected"
     type: string
     sql: ${TABLE}.star_detected_disc ;;
   }
 
   dimension: star_distance {
+    description: "distance of the star to the observer in PC"
     type: number
     sql: ${TABLE}.star_distance ;;
   }
 
-  dimension: star_distance_error_max {
-    type: number
-    sql: ${TABLE}.star_distance_error_max ;;
-  }
-
-  dimension: star_distance_error_min {
-    type: number
-    sql: ${TABLE}.star_distance_error_min ;;
-  }
-
   dimension: star_magnetic_field {
+    description: "Was a stellar magnetic field detected"
     type: yesno
     sql: ${TABLE}.star_magnetic_field ;;
   }
 
   dimension: star_mass {
+    description: "In Solar Masses"
     type: number
     sql: ${TABLE}.star_mass ;;
   }
 
-  dimension: star_mass_error_max {
-    type: number
-    sql: ${TABLE}.star_mass_error_max ;;
-  }
-
-  dimension: star_mass_error_min {
-    type: number
-    sql: ${TABLE}.star_mass_error_min ;;
-  }
-
   dimension: star_metallicity {
+    description: "decimal logarithm of the massive elements (« metals ») to hydrogen ratio in solar units  (i.e. Log [(metals/H)star/(metals/H)Sun] )"
     type: number
     sql: ${TABLE}.star_metallicity ;;
-  }
-
-  dimension: star_metallicity_error_max {
-    type: number
-    sql: ${TABLE}.star_metallicity_error_max ;;
-  }
-
-  dimension: star_metallicity_error_min {
-    type: number
-    sql: ${TABLE}.star_metallicity_error_min ;;
   }
 
   dimension: star_name {
@@ -359,136 +241,69 @@ view: eu_exoplanets {
   }
 
   dimension: star_radius {
+    description: "Star radius in solar units"
     type: number
     sql: ${TABLE}.star_radius ;;
   }
 
-  dimension: star_radius_error_max {
-    type: number
-    sql: ${TABLE}.star_radius_error_max ;;
-  }
-
-  dimension: star_radius_error_min {
-    type: number
-    sql: ${TABLE}.star_radius_error_min ;;
-  }
-
-  dimension: star_sp_type {
+  dimension: star_spectral_type {
+    description: "Stellar spectral type"
     type: string
     sql: ${TABLE}.star_sp_type ;;
   }
 
-  dimension: star_teff {
+  dimension: star_effective_temperature {
+    description: "Effective stellar temperature"
     type: number
     sql: ${TABLE}.star_teff ;;
   }
 
-  dimension: star_teff_error_max {
-    type: number
-    sql: ${TABLE}.star_teff_error_max ;;
-  }
-
-  dimension: star_teff_error_min {
-    type: number
-    sql: ${TABLE}.star_teff_error_min ;;
-  }
-
-  dimension: tconj {
+  dimension: time_of_conjunction {
+    description: "time of the star-planet upper conjunction, in JD"
     type: number
     sql: ${TABLE}.tconj ;;
   }
 
-  dimension: tconj_error_max {
-    type: number
-    sql: ${TABLE}.tconj_error_max ;;
-  }
-
-  dimension: tconj_error_min {
-    type: number
-    sql: ${TABLE}.tconj_error_min ;;
-  }
-
-  dimension: temp_calculated {
+  dimension: planet_temp_calculated {
+    label: "Planet temperature (Calculated)"
+    description: "planet temperature as calculated by authors, based on a planet model"
     type: number
     sql: ${TABLE}.temp_calculated ;;
   }
 
-  dimension: temp_calculated_error_max {
-    type: number
-    sql: ${TABLE}.temp_calculated_error_max ;;
-  }
-
-  dimension: temp_calculated_error_min {
-    type: number
-    sql: ${TABLE}.temp_calculated_error_min ;;
-  }
-
   dimension: temp_measured {
+    label: "Planet temperature (Measured)"
+    description: "Planet temperature as measured by authors"
     type: number
     sql: ${TABLE}.temp_measured ;;
   }
 
-  dimension: tperi {
+  dimension: time_of_periastron {
+    description: "time of passage at the periapse for eccentric orbits, in JD"
     type: number
     sql: ${TABLE}.tperi ;;
   }
 
-  dimension: tperi_error_max {
-    type: number
-    sql: ${TABLE}.tperi_error_max ;;
-  }
-
-  dimension: tperi_error_min {
-    type: number
-    sql: ${TABLE}.tperi_error_min ;;
-  }
-
-  dimension: tzero_tr {
+  dimension: time_zero_transit {
+    description: "time of passage at the center of the transit light curve for the primary transit, in JD"
     type: number
     sql: ${TABLE}.tzero_tr ;;
   }
 
-  dimension: tzero_tr_error_max {
-    type: number
-    sql: ${TABLE}.tzero_tr_error_max ;;
-  }
-
-  dimension: tzero_tr_error_min {
-    type: number
-    sql: ${TABLE}.tzero_tr_error_min ;;
-  }
-
-  dimension: tzero_tr_sec {
+  dimension: time_secondary_transit {
+    description: "time of passage at the center of the transit light curve for the secondary transit"
     type: number
     sql: ${TABLE}.tzero_tr_sec ;;
   }
 
-  dimension: tzero_tr_sec_error_max {
-    type: number
-    sql: ${TABLE}.tzero_tr_sec_error_max ;;
-  }
-
-  dimension: tzero_tr_sec_error_min {
-    type: number
-    sql: ${TABLE}.tzero_tr_sec_error_min ;;
-  }
-
   dimension: tzero_vr {
+    hidden: yes
     type: number
     sql: ${TABLE}.tzero_vr ;;
   }
 
-  dimension: tzero_vr_error_max {
-    type: number
-    sql: ${TABLE}.tzero_vr_error_max ;;
-  }
-
-  dimension: tzero_vr_error_min {
-    type: number
-    sql: ${TABLE}.tzero_vr_error_min ;;
-  }
-
   dimension_group: updated {
+    description: "date of the update of data"
     type: time
     timeframes: [
       raw,

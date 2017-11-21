@@ -260,26 +260,6 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     sql: ${TABLE}.koi_kmag ;;
   }
 
-  dimension: koi_ldm_coeff1 {
-    type: number
-    sql: ${TABLE}.koi_ldm_coeff1 ;;
-  }
-
-  dimension: koi_ldm_coeff2 {
-    type: number
-    sql: ${TABLE}.koi_ldm_coeff2 ;;
-  }
-
-  dimension: koi_ldm_coeff3 {
-    type: number
-    sql: ${TABLE}.koi_ldm_coeff3 ;;
-  }
-
-  dimension: koi_ldm_coeff4 {
-    type: number
-    sql: ${TABLE}.koi_ldm_coeff4 ;;
-  }
-
   dimension: koi_limbdark_mod {
     type: string
     sql: ${TABLE}.koi_limbdark_mod ;;
@@ -382,15 +362,6 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     sql: ${TABLE}.koi_sma ;;
   }
 
-  dimension: koi_sma_err1 {
-    type: string
-    sql: ${TABLE}.koi_sma_err1 ;;
-  }
-
-  dimension: koi_sma_err2 {
-    type: string
-    sql: ${TABLE}.koi_sma_err2 ;;
-  }
 
   dimension: koi_smass {
     type: number
