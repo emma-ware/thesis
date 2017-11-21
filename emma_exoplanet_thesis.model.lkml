@@ -24,6 +24,8 @@ explore: eu_exoplanets {
 
 explore: kepler_koi {}
 
+explore: unedited_confirmed_kep_table {}
+
 explore: numbers {}
 
 # explore: numbers {
