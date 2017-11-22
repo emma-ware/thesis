@@ -252,6 +252,11 @@ view: eu_exoplanets {
     sql: ${TABLE}.star_sp_type ;;
   }
 
+  dimension: cleaned_spectral_type {
+    type: string
+    sql: substr(${TABLE}.star_sp_type,0,1) ;;
+  }
+
   dimension: star_effective_temperature {
     description: "Effective stellar temperature"
     type: number

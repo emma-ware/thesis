@@ -220,137 +220,128 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     sql: ${TABLE}.koi_hmag ;;
   }
 
-  dimension: koi_imag {
-    type: number
-    sql: ${TABLE}.koi_imag ;;
-  }
-
-  dimension: koi_impact {
-    type: number
-    sql: ${TABLE}.koi_impact ;;
-  }
-
-  dimension: koi_incl {
-    type: number
-    sql: ${TABLE}.koi_incl ;;
-  }
-
-  dimension: koi_ingress {
-    type: string
-    sql: ${TABLE}.koi_ingress ;;
-  }
-
-  dimension: koi_insol {
-    type: number
-    sql: ${TABLE}.koi_insol ;;
-  }
+#   dimension: koi_imag {
+#     type: number
+#     sql: ${TABLE}.koi_imag ;;
+#   }
+#
+#   dimension: koi_impact {
+#     type: number
+#     sql: ${TABLE}.koi_impact ;;
+#   }
+#
+#   dimension: koi_incl {
+#     type: number
+#     sql: ${TABLE}.koi_incl ;;
+#   }
+#
+#   dimension: koi_ingress {
+#     type: string
+#     sql: ${TABLE}.koi_ingress ;;
+#   }
+#
+#   dimension: koi_insol {
+#     type: number
+#     sql: ${TABLE}.koi_insol ;;
+#   }
 
   dimension: koi_jmag {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_jmag ;;
   }
 
   dimension: koi_kepmag {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_kepmag ;;
   }
 
   dimension: koi_kmag {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_kmag ;;
   }
 
-  dimension: koi_limbdark_mod {
-    type: string
-    sql: ${TABLE}.koi_limbdark_mod ;;
-  }
+#   dimension: koi_limbdark_mod {
+#     type: string
+#     sql: ${TABLE}.koi_limbdark_mod ;;
+#   }
 
-  dimension: koi_longp {
+  dimension: longitude_of_periastron {
     type: string
     sql: ${TABLE}.koi_longp ;;
   }
 
-  dimension: koi_max_mult_ev {
-    type: number
-    sql: ${TABLE}.koi_max_mult_ev ;;
-  }
-
-  dimension: koi_max_sngle_ev {
-    type: number
-    sql: ${TABLE}.koi_max_sngle_ev ;;
-  }
-
   dimension: koi_model_chisq {
+    group_label: "Model Parameters"
     type: string
     sql: ${TABLE}.koi_model_chisq ;;
   }
 
   dimension: koi_model_dof {
+    group_label: "Model Parameters"
     type: string
     sql: ${TABLE}.koi_model_dof ;;
   }
 
   dimension: koi_model_snr {
+    group_label: "Model Parameters"
     type: number
     sql: ${TABLE}.koi_model_snr ;;
   }
 
-  dimension: koi_num_transits {
+  dimension: number_of_transits {
+    description: "The number of expected transits or partially-observed transits associated with the planet candidate occurring within the searched light curve. This does not include that fall completely within data gaps."
     type: number
     sql: ${TABLE}.koi_num_transits ;;
   }
 
-  dimension: koi_parm_prov {
-    type: string
-    sql: ${TABLE}.koi_parm_prov ;;
-  }
-
-  dimension: koi_pdisposition {
+  dimension: planet_status_kepler_data {
+    description: "The pipeline flag that designates the most probable physical explanation of the KOI. Typical values are FALSE POSITIVE, NOT DISPOSITIONED, and CANDIDATE. The value of this flag may change over time as the evaluation of KOIs proceeds to deeper levels of analysis using Kepler time-series pixel and light curve data, or follow-up observations. A not dispositioned value corresponds to objects for which the disposition tests have not yet been completed. A false positive has failed at least one of the tests described in Batalha et al. (2012). A planetary candidate has passed all prior tests conducted to identify false positives, although this does not a priori mean that all possible tests have been conducted."
     type: string
     sql: ${TABLE}.koi_pdisposition ;;
   }
 
-  dimension: koi_period {
+  dimension: planet_orbital_period {
+    description: "The interval between consecutive planetary transits.  "
     type: number
     sql: ${TABLE}.koi_period ;;
   }
 
-  dimension: koi_prad {
+  dimension: planetary_radius{
+    description: "The radius of the planet. Planetary radius is the product of the planet star radius ratio and the stellar radius. "
     type: number
     sql: ${TABLE}.koi_prad ;;
   }
 
-  dimension: koi_quarters {
-    type: number
-    sql: ${TABLE}.koi_quarters ;;
-  }
-
   dimension: koi_rmag {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_rmag ;;
   }
 
-  dimension: koi_ror {
-    type: number
-    sql: ${TABLE}.koi_ror ;;
-  }
 
-  dimension: koi_sage {
+  dimension: star_age {
+    description: "The age of the star "
     type: string
     sql: ${TABLE}.koi_sage ;;
   }
 
-  dimension: koi_score {
+  dimension: disposition_score {
+    description: "A value between 0 and 1 that indicates the confidence in the KOI disposition. For CANDIDATEs, a higher value indicates more confidence in its disposition, while for FALSE POSITIVEs, a higher value indicates less confidence in that disposition. The value is calculated from a Monte Carlo technique such that the score's value is equivalent to the frction of iterations where the Robovetter yields a disposition of CANDIDATE. "
     type: number
     sql: ${TABLE}.koi_score ;;
   }
 
-  dimension: koi_slogg {
+  dimension: stellar_surface_gravity {
+    description: "The base-10 logarithm of the acceleration due to gravity at the surface of the star.  "
     type: number
     sql: ${TABLE}.koi_slogg ;;
   }
 
-  dimension: koi_sma {
+  dimension: orbit_semi_major_axis {
+    description: "AU, Half of the long axis of the ellipse defining a planet's orbit. For a circular orbit this is the planet-star separation radius. "
     type: number
     sql: ${TABLE}.koi_sma ;;
   }
@@ -363,30 +354,32 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
   }
 
 
-  dimension: koi_smass {
+  dimension: stellar_mass {
     type: number
     sql: ${TABLE}.koi_smass ;;
   }
 
-  dimension: koi_smet {
+  dimension: stellar_metallicity {
+    description: "The base-10 logarithm of the Fe to H ratio at the surface of the star, normalized by the solar Fe to H ratio"
     type: number
     sql: ${TABLE}.koi_smet ;;
   }
 
-  dimension: koi_sparprov {
-    type: string
-    sql: ${TABLE}.koi_sparprov ;;
-  }
+#   dimension: koi_sparprov {
+#     type: string
+#     sql: ${TABLE}.koi_sparprov ;;
+#   }
 
-  dimension: koi_srad {
+  dimension: stellar_radius {
+    description: "The photospheric radius of the star"
     type: number
     sql: ${TABLE}.koi_srad ;;
   }
 
-  dimension: koi_srho {
-    type: number
-    sql: ${TABLE}.koi_srho ;;
-  }
+#   dimension: koi_srho {
+#     type: number
+#     sql: ${TABLE}.koi_srho ;;
+#   }
 
   dimension: effective_temperature{
     type: number
@@ -400,37 +393,37 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     sql: ${effective_temperature} ;;
   }
 
-  dimension: koi_tce_delivname {
-    type: string
-    sql: ${TABLE}.koi_tce_delivname ;;
-  }
+#   dimension: koi_tce_delivname {
+#     type: string
+#     sql: ${TABLE}.koi_tce_delivname ;;
+#   }
+#
+#   dimension: koi_tce_plnt_num {
+#     type: number
+#     sql: ${TABLE}.koi_tce_plnt_num ;;
+#   }
 
-  dimension: koi_tce_plnt_num {
-    type: number
-    sql: ${TABLE}.koi_tce_plnt_num ;;
-  }
-
-  dimension: koi_teq {
+  dimension: equilibrium_planet_temperature{
     type: number
     sql: ${TABLE}.koi_teq ;;
   }
 
-  dimension: koi_time0 {
-    type: number
-    sql: ${TABLE}.koi_time0 ;;
-  }
+#   dimension: koi_time0 {
+#     type: number
+#     sql: ${TABLE}.koi_time0 ;;
+#   }
+#
+#   dimension: koi_time0bk {
+#     type: number
+#     sql: ${TABLE}.koi_time0bk ;;
+#   }
 
-  dimension: koi_time0bk {
-    type: number
-    sql: ${TABLE}.koi_time0bk ;;
-  }
+#   dimension: koi_trans_mod {
+#     type: string
+#     sql: ${TABLE}.koi_trans_mod ;;
+#   }
 
-  dimension: koi_trans_mod {
-    type: string
-    sql: ${TABLE}.koi_trans_mod ;;
-  }
-
-  dimension_group: koi_vet {
+  dimension_group: last_update {
     type: time
     timeframes: [
       raw,
@@ -445,17 +438,19 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     sql: ${TABLE}.koi_vet_date ;;
   }
 
-  dimension: koi_vet_stat {
+  dimension: vetting_status {
+    description: "The vetting status for this KOI delivery. Current possible states are ACTIVE and DONE."
     type: string
     sql: ${TABLE}.koi_vet_stat ;;
   }
 
   dimension: koi_zmag {
+    group_label: "Stellar Magnitude"
     type: number
     sql: ${TABLE}.koi_zmag ;;
   }
 
-  dimension: ra {
+  dimension: right_ascention {
     type: number
     sql: ${TABLE}.ra ;;
   }
