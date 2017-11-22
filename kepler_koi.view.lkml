@@ -465,4 +465,32 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
     type: count
     drill_fields: [kepler_name]
   }
+
+  measure: count_false_positive {
+    type: count
+    drill_fields: [kepler_object_of_interest_name, kepler_name]
+    filters: {
+      field: planet_status
+      value: "FALSE POSITIVE"
+    }
+  }
+
+  measure: count_confirmed {
+    type: count
+    drill_fields: [kepler_object_of_interest_name, kepler_name]
+    filters: {
+      field: planet_status
+      value: "CONFIRMED"
+    }
+  }
+
+  measure: count_candidate {
+    type: count
+    drill_fields: [kepler_object_of_interest_name, kepler_name]
+    filters: {
+      field: planet_status
+      value: "CANDIDATE"
+    }
+  }
+
 }
