@@ -29,16 +29,6 @@ explore: unedited_confirmed_kep_table {}
 explore: numbers {}
 
 
-# view: NDT1 {
-#   derived_table: {
-#     explore_source: confirmed_kepler {
-#       column: host_star_name {field: confirmed_kepler.host_star_name}
-#     }
-#   }
-#   # Define the view's fields as desired
-#   dimension: host_star_name {type:string}
-# }
-
 # view: NDT2 {
 #   derived_table: {
 #     explore_source: kepler_koi {

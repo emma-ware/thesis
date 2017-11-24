@@ -216,6 +216,14 @@ view: eu_exoplanets {
     sql: ${TABLE}.star_distance ;;
   }
 
+  dimension: star_distance_tiers {
+    type: tier
+    tiers: [0,10,50,100,500,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000]
+    style: integer
+    sql: ${TABLE}.star_distance ;;
+  }
+
+
   dimension: star_magnetic_field {
     description: "Was a stellar magnetic field detected"
     type: yesno
@@ -238,6 +246,7 @@ view: eu_exoplanets {
     primary_key: yes
     type: string
     sql: ${TABLE}.star_name ;;
+    html: <a href="/dashboards/44?StarName={{ value }}">{{ value }}</a> ;;
   }
 
   dimension: star_radius {
@@ -327,4 +336,32 @@ view: eu_exoplanets {
     type: count
     drill_fields: [star_name, planet_name]
   }
+
+  measure: comparitive_size{
+    type: number
+    sql: ${planet_radius} ;;
+    html:
+    {% if value > 0 and value < 0.2 %}
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" height=300 width=300>
+      {% elsif value >= 0.2 and value < 0.8 %}
+      <p><img src="https://static.pexels.com/photos/2422/sky-earth-galaxy-universe.jpg" height=300 width=300></p>
+      {% elsif value >= 0.8 and value < 1 %}
+      <img src="https://solarsystem.nasa.gov/images/slideshow/Saturn_from_Cassini_319.jpg" height=300 width=300>
+      {% elsif value >= 1 %}
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" height=300 width=300>
+      {% elsif value = null %}
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" height=300 width=300>
+      {% else %}
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg" height=300 width=300>
+      {% endif %}
+
+      </body>;;
+  }
+
+
+
+
+
+
+
 }

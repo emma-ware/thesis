@@ -43,6 +43,11 @@ view: kepler_koi {
     sql: ${TABLE}.koi_count ;;
   }
 
+  measure: number_of_planets_in_system {
+    type: sum
+    sql:  ${TABLE}.koi_count ;;
+  }
+
   dimension: link_to_DV_report {
     hidden: yes
     type: string
@@ -254,6 +259,13 @@ LS+MCMC (Least Squares Fit with Markov Monte Carlo error bars)"
   dimension: koi_kepmag {
     group_label: "Stellar Magnitude"
     type: number
+    sql: ${TABLE}.koi_kepmag ;;
+  }
+
+  dimension: absolute_magnitude {
+    type: tier
+    style: interval
+    tiers: [0,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
     sql: ${TABLE}.koi_kepmag ;;
   }
 
