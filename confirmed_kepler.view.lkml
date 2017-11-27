@@ -9,6 +9,7 @@ view: confirmed_kepler {
 #     sql: select *, (UNNEST(GENERATE_ARRAY(0,100,1)) as n) from exoplanet_thesis.confirmed_kepler ;;
 #   }
 
+
   dimension: declination {
     description: "Declination of the planetary system in decimal degrees. "
     type: number
@@ -228,6 +229,7 @@ view: confirmed_kepler {
     description: "Name of the Star"
     type: string
     sql: ${TABLE}.pl_hostname ;;
+    html: <a href="/dashboards/44?StarName=%22{{ host_star_name._value }}%22">{{ value }}</a> ;;
   }
 
   dimension: planet_imaging_flag {
@@ -594,6 +596,13 @@ view: confirmed_kepler {
     sql: ${TABLE}.pl_rvamp ;;
   }
 
+  measure: radial_velocity_amp{
+    description: "Half the peak-to-peak amplitude of variability in the stellar radial velocity.  "
+    view_label: "Confirmed Kepler Planets"
+    type: sum
+    sql: ${TABLE}.pl_rvamp * 1.0 ;;
+  }
+
   dimension: planet_rv_flag {
     group_label: "Flags"
     description: "Flag indicating if the planet host star exhibits radial velocity variations due to the planet (1=yes, 0=no)"
@@ -665,6 +674,9 @@ view: confirmed_kepler {
     description: "Right Ascension of the planetary system in decimal degrees. "
     type: number
     sql: ${TABLE}.ra ;;
+    drill_fields: [host_star_name,planet_name]
+    html:
+    {{ rendered_value }} | {{ host_star_name._rendered_value }};;
   }
 
 

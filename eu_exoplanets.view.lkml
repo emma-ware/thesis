@@ -246,7 +246,7 @@ view: eu_exoplanets {
     primary_key: yes
     type: string
     sql: ${TABLE}.star_name ;;
-    html: <a href="/dashboards/44?StarName={{ value }}">{{ value }}</a> ;;
+    html: <a href="/dashboards/44?EU%20Star%20Name=%22{{ star_name._value }}%22">{{ value }}</a> ;;
   }
 
   dimension: star_radius {
