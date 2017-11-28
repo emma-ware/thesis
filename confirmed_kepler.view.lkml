@@ -229,7 +229,7 @@ view: confirmed_kepler {
     description: "Name of the Star"
     type: string
     sql: ${TABLE}.pl_hostname ;;
-    html: <a href="/dashboards/44?StarName=%22{{ host_star_name._value }}%22">{{ value }}</a> ;;
+    html: <a href="/dashboards/44?Star%20Name=%22{{ host_star_name._value }}%22">{{ value }}</a> ;;
   }
 
   dimension: planet_imaging_flag {
@@ -365,6 +365,8 @@ view: confirmed_kepler {
     view_label: "Confirmed Kepler Planets"
     type: string
     sql: ${TABLE}.pl_name ;;
+    html: <a href="/dashboards/59?Kepler%20Name=%22{{ planet_name._value }}%22">{{ value }}</a> ;;
+
   }
 
   dimension: planets_number_of_notes {

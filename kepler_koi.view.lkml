@@ -18,6 +18,8 @@ view: kepler_koi {
     primary_key: yes
     type: string
     sql: ${TABLE}.kepler_name ;;
+    html: <a href="/dashboards/59?KOI%20Name=%22{{ kepler_name._value }}%22">{{ value }}</a> ;;
+
   }
 
   dimension: kepler_object_of_interest_name {

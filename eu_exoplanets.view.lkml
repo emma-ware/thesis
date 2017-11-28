@@ -4,6 +4,7 @@ view: eu_exoplanets {
   dimension: planet_name {
     type: string
     sql: ${TABLE}.__name ;;
+    html: <a href="/dashboards/59?EU%20Catalog%20Name=%22{{ planet_name._value }}%22">{{ value }}</a> ;;
   }
 
   dimension: alternate_names {
