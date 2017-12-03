@@ -345,7 +345,7 @@ view: eu_exoplanets {
     sql: ${planet_radius} ;;
     html:
     {% if value > 0 and value < 0.2 %}
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" height=300 width=300>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" height=380 width=380>
       {% elsif value >= 0.2 and value < 0.8 %}
       <p><img src="https://static.pexels.com/photos/2422/sky-earth-galaxy-universe.jpg" height=300 width=300></p>
       {% elsif value >= 0.8 and value < 1 %}
