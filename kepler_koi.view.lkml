@@ -18,9 +18,12 @@ view: kepler_koi {
     primary_key: yes
     type: string
     sql: ${TABLE}.kepler_name ;;
-    html: <a href="/dashboards/59?KOI%20Name=%22{{ kepler_name._value }}%22">{{ value }}</a> ;;
+    html: <a href="/dashboards/59?Star%20Name=%22{{ eu_exoplanets.star_name._value }}%22">{{ value }}</a> ;;
 
   }
+
+  #    html: <a href="/dashboards/59?KOI%20Name=%22{{ kepler_name._value }}%22%">{{ value }}</a> ;;
+
 
   dimension: kepler_object_of_interest_name {
     description: "A number used to identify and track a Kepler Object of Interest (KOI). A KOI is a target identified by the Kepler Project that displays at least one transit-like sequence within Kepler time-series photometry that appears to be of astrophysical origin and initially consistent with a planetary transit hypothesis. A KOI name has an integer and a decimal part of the format KNNNNN.DD. The integer part designates the target star; the two-digit decimal part identifies a unique transiting object associated with that star. It is not necessarily the planetary candidate listed in that order within a DV report, nor does it indicate the distance of the planet from the the host star relative to other planets in the system."

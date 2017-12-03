@@ -21,35 +21,14 @@ Click the "Edit Source" button above to make changes.
 * Some important terms: mass, semi-major axis (AUs), period
 
 
-
-
-
-
-
-
-
-## System Look Up
-
-#### Elements of the Dash
-* What are useful metrics for systems
-* Why some have more data than others
-
-
-
-## Star Details
-
-Elements of the dash
-
-![Hertzsprung Russell Diagram](https://upload.wikimedia.org/wikipedia/commons/6/6b/HRDiagram.png)
-
-
-
-
-## Comparison System
-
-Main tool for curious amateur astronomers, be able to compare your candidate system, drill into existing discoveries, and make insights about if you have a planet or not!
-
-
 ## Intersting Notes
 - Variable names are stored in unhelpfully short snippets, for instance st_pmdec instead of Dec Proper Motion. Because sql is generated in looker, I can give descriptive field names
 - Same dash can be used for amateurs and experts, just fill in what you know!
+- Hidden
+
+## Difficulties
+* Cleaning the datasets
+* Visualizations
+* Too much to include!
+* finding averages accross all three when there are different values (table calcs)
+*

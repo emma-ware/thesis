@@ -22,6 +22,7 @@ view: eu_exoplanets {
     label: "Declination"
     type: number
     sql: ${TABLE}.dec ;;
+    value_format_name: decimal_1
   }
 
   dimension: detection_type {
@@ -175,6 +176,7 @@ view: eu_exoplanets {
   dimension: right_ascention {
     type: number
     sql: ${TABLE}.ra ;;
+    value_format_name: decimal_1
   }
 
   dimension: planet_radius {
